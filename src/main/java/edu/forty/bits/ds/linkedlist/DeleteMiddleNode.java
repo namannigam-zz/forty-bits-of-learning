@@ -1,4 +1,4 @@
-package org.practice.learning.linkedlist;
+package edu.forty.bits.ds.linkedlist;
 
 // given a node delete it from the middle
 public class DeleteMiddleNode {

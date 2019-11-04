@@ -1,4 +1,4 @@
-package org.practice.learning.competitive.wynk;
+package edu.forty.bits.ps.competitive.wynk;
 
 public class SqrtTest {
 

@@ -1,4 +1,4 @@
-package org.practice.learning.linkedlist;
+package edu.forty.bits.ds.linkedlist;
 
 // can ask if the list size is known, recursive vs iterative solution
 public class KthFromLastNode {

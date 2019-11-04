@@ -1,4 +1,4 @@
-package org.practice.learning.tree;
+package edu.forty.bits.ds.tree;
 
 import java.util.ArrayList;
 import java.util.LinkedList;

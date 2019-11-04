@@ -1,4 +1,4 @@
-package org.practice.learning.tree;
+package edu.forty.bits.ds.tree;
 
 /**
  * Created by naman.nigam on 08/02/16.

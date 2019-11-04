@@ -1,4 +1,4 @@
-package org.practice.learning.competitive.wissen;
+package edu.forty.bits.ps.competitive.wissen;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;

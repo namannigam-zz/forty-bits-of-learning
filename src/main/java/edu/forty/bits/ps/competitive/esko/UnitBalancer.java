@@ -1,4 +1,4 @@
-package org.practice.learning.competitive.esko;
+package edu.forty.bits.ps.competitive.esko;
 
 import java.util.*;
 import java.util.stream.Collectors;

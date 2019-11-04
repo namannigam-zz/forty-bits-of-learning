@@ -1,4 +1,4 @@
-package org.practice.learning.tree;
+package edu.forty.bits.ds.tree;
 
 // definition of a balanced tree is must to clarify in such questions,
 // here it is true if any sub tree is of no more height than its sibling by a difference of 1.

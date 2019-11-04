@@ -1,4 +1,4 @@
-package org.practice.learning.dynamicprogramming;
+package edu.forty.bits.ps.dynamicprogramming;
 
 import java.util.ArrayList;
 import java.util.stream.IntStream;

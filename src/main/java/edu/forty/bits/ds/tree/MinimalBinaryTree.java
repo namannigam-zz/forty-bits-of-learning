@@ -1,4 +1,4 @@
-package org.practice.learning.tree;
+package edu.forty.bits.ds.tree;
 
 // This operation is on sorted data
 public class MinimalBinaryTree {

@@ -1,4 +1,4 @@
-package org.practice.learning.competitive.equalsexperts;
+package edu.forty.bits.ps.competitive.equalsexperts;
 
 import java.util.ArrayList;
 import java.util.Collections;

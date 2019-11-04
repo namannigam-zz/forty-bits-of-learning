@@ -1,4 +1,4 @@
-package org.practice.learning.array;
+package edu.forty.bits.ds.array;
 
 import java.math.BigInteger;
 import java.util.stream.IntStream;

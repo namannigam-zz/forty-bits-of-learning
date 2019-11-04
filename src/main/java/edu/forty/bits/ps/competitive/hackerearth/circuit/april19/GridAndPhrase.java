@@ -1,4 +1,4 @@
-package org.practice.learning.competitive.hackerearth.circuit.april19;
+package edu.forty.bits.ps.competitive.hackerearth.circuit.april19;
 
 import java.util.Scanner;
 

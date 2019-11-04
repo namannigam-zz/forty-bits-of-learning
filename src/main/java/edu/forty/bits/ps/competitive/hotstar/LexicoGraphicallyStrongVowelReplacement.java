@@ -1,4 +1,4 @@
-package org.practice.learning.competitive.hotstar;
+package edu.forty.bits.ps.competitive.hotstar;
 
 public class LexicoGraphicallyStrongVowelReplacement {
 

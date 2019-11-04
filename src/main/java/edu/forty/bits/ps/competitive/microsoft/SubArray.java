@@ -1,4 +1,4 @@
-package org.practice.learning.competitive.microsoft;
+package edu.forty.bits.ps.competitive.microsoft;
 
 import java.util.Arrays;
 

@@ -1,4 +1,4 @@
-package org.practice.learning.competitive.anzen;
+package edu.forty.bits.ps.competitive.anzen;
 
 import java.util.Scanner;
 

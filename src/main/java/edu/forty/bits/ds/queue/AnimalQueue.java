@@ -1,4 +1,4 @@
-package org.practice.learning.queue;
+package edu.forty.bits.ds.queue;
 
 import java.util.LinkedList;
 

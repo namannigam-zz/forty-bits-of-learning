@@ -1,4 +1,4 @@
-package org.practice.learning.string;
+package edu.forty.bits.ds.string;
 
 /**
  * Created by naman.nigam on 03/02/17.

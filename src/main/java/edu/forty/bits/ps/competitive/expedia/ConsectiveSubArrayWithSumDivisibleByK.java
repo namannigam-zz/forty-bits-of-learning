@@ -1,4 +1,4 @@
-package org.practice.learning.competitive.expedia;
+package edu.forty.bits.ps.competitive.expedia;
 
 public class ConsectiveSubArrayWithSumDivisibleByK {
 

@@ -1,4 +1,4 @@
-package org.practice.learning.linkedlist;
+package edu.forty.bits.ds.linkedlist;
 
 // find the sum of two numbers represented as digits in reverse order of linked list
 // (then follow up if the input is represented as forward order of digits)

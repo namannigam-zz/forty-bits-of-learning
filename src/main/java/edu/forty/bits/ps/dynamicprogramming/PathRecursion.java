@@ -1,4 +1,4 @@
-package org.practice.learning.dynamicprogramming;
+package edu.forty.bits.ps.dynamicprogramming;
 
 /**
  * Created by naman.nigam on 25/11/15.

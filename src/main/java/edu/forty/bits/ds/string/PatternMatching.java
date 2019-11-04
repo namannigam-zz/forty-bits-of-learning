@@ -1,4 +1,4 @@
-package org.practice.learning.string;
+package edu.forty.bits.ds.string;
 
 // implementation of KMP pattern searching algorithm
 // @link https://www.geeksforgeeks.org/kmp-algorithm-for-pattern-searching/

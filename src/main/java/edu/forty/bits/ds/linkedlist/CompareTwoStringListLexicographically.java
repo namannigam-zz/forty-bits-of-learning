@@ -1,4 +1,4 @@
-package org.practice.learning.linkedlist;
+package edu.forty.bits.ds.linkedlist;
 
 import java.util.LinkedList;
 

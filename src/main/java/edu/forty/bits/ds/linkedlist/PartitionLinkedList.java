@@ -1,4 +1,4 @@
-package org.practice.learning.linkedlist;
+package edu.forty.bits.ds.linkedlist;
 // partition a linked list given a value x such that all smaller comes on one side and greater on another
 // (if x is a part of list it can appear in the right partition anywhere)
 public class PartitionLinkedList {

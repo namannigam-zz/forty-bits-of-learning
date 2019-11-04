@@ -1,4 +1,4 @@
-package org.practice.learning.basic;
+package edu.forty.bits.ps.basic;
 
 // Java program to find largest power of
 // a number (which may be composite) that

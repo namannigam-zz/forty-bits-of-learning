@@ -1,4 +1,4 @@
-package org.practice.learning.basic;
+package edu.forty.bits.ps.basic;
 
 import java.util.*;
 

@@ -1,4 +1,4 @@
-package org.practice.learning.string;
+package edu.forty.bits.ds.string;
 
 // @link https://www.geeksforgeeks.org/sort-string-according-order-defined-another-string/
 public class SortStringByOrderDefinedByAnother {

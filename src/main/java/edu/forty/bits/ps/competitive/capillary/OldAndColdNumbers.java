@@ -1,4 +1,4 @@
-package org.practice.learning.competitive.capillary;
+package edu.forty.bits.ps.competitive.capillary;
 
 import java.util.Scanner;
 

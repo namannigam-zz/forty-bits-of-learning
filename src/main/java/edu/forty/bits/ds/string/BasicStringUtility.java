@@ -1,4 +1,4 @@
-package org.practice.learning.string;
+package edu.forty.bits.ds.string;
 
 import java.util.Arrays;
 import java.util.stream.IntStream;

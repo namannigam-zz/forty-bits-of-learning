@@ -1,4 +1,4 @@
-package org.practice.learning.tree;
+package edu.forty.bits.ds.tree;
 
 // next element is supposedly the in-order successor of an element
 // given the parent is provided for each node

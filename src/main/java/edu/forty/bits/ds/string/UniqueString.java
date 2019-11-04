@@ -1,4 +1,4 @@
-package org.practice.learning.string;
+package edu.forty.bits.ds.string;
 
 // find if a com.stackoverflow.nullpointer.string has all unique characters (what if you cannot use additional data structures?)
 public class UniqueString {

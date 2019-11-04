@@ -1,4 +1,4 @@
-package org.practice.learning.competitive.hackerearth;
+package edu.forty.bits.ps.competitive.hackerearth;
 
 import java.util.Scanner;
 import java.util.stream.IntStream;

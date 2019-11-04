@@ -1,4 +1,4 @@
-package org.practice.learning.competitive.lenskart;
+package edu.forty.bits.ps.competitive.lenskart;
 
 import java.util.*;
 

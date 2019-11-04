@@ -1,4 +1,4 @@
-package org.practice.learning.graph;
+package edu.forty.bits.ds.graph;
 
 public class Graph {
     GraphNode [] nodes;

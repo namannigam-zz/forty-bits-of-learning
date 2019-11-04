@@ -1,4 +1,4 @@
-package org.practice.learning.string;
+package edu.forty.bits.ds.string;
 
 // compress a com.stackoverflow.nullpointer.string with representation such that aabcccccaa is represented as a2b1c5a2,
 // but if the representation is not shorter then return the original com.stackoverflow.nullpointer.string

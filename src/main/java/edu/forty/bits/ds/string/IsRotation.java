@@ -1,4 +1,4 @@
-package org.practice.learning.string;
+package edu.forty.bits.ds.string;
 
 // `isSubstring` checks is one com.stackoverflow.nullpointer.string is a substring of another, for s1 and s2,
 // write code to check is s2 is a rotation of s1 by calling the given method only once

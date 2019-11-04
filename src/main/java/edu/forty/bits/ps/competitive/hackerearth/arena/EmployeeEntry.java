@@ -1,4 +1,4 @@
-package org.practice.learning.competitive.hackerearth.arena;
+package edu.forty.bits.ps.competitive.hackerearth.arena;
 
 import java.util.Arrays;
 import java.util.Scanner;

@@ -1,4 +1,4 @@
-package org.practice.learning.sorting;
+package edu.forty.bits.ds.sorting;
 
 /**
  * Time Complexity : O(nLogn)

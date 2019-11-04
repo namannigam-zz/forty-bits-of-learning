@@ -1,4 +1,4 @@
-package org.practice.learning.competitive.hackerearth.hourstorm;
+package edu.forty.bits.ps.competitive.hackerearth.hourstorm;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,4 +1,4 @@
-package org.practice.learning.competitive.hackerearth.easy.september18;
+package edu.forty.bits.ps.competitive.hackerearth.easy.september18;
 
 import java.util.*;
 import java.util.stream.Collectors;

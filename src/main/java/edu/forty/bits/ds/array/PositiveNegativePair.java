@@ -1,4 +1,4 @@
-package org.practice.learning.array;
+package edu.forty.bits.ds.array;
 
 /**
  * @see <href>https://practice.geeksforgeeks.org/problems/pairs-with-positive-negative-values/0#ExpectOP</href>

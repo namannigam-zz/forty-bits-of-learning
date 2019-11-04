@@ -1,4 +1,4 @@
-package org.practice.learning.string;
+package edu.forty.bits.ds.string;
 
 // threed edits, delete, replace and insert a character, check if two strings are just one edit away
 public class OneAway {

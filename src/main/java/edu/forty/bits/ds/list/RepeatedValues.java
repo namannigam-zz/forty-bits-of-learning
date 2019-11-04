@@ -1,4 +1,4 @@
-package org.practice.learning.list;
+package edu.forty.bits.ds.list;
 
 import java.util.HashSet;
 import java.util.List;

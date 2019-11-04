@@ -1,4 +1,4 @@
-package org.practice.learning.competitive.codejam;
+package edu.forty.bits.ps.competitive.codejam;
 
 import java.util.*;
 import java.util.stream.Collectors;

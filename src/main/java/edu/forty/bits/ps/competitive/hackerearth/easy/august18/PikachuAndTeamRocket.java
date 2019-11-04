@@ -1,4 +1,4 @@
-package org.practice.learning.competitive.hackerearth.easy.august18;
+package edu.forty.bits.ps.competitive.hackerearth.easy.august18;
 
 import java.util.Scanner;
 import java.util.function.Function;

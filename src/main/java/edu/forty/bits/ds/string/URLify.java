@@ -1,4 +1,4 @@
-package org.practice.learning.string;
+package edu.forty.bits.ds.string;
 
 // replace all spaces in a com.stackoverflow.nullpointer.string with %20, given the sufficient space and exact length of the com.stackoverflow.nullpointer.string
 // (in java use char[] to do it in place)

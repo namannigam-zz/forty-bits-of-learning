@@ -1,4 +1,4 @@
-package org.practice.learning.competitive.rebelfoods;
+package edu.forty.bits.ps.competitive.rebelfoods;
 
 import java.util.Scanner;
 

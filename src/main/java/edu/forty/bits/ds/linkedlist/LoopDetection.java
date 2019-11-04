@@ -1,4 +1,4 @@
-package org.practice.learning.linkedlist;
+package edu.forty.bits.ds.linkedlist;
 
 // detect a loop in the linked list
 // (follow up with removing the loop)

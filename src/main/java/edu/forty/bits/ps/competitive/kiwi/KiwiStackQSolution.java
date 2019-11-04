@@ -1,4 +1,4 @@
-package org.practice.learning.competitive.kiwi;
+package edu.forty.bits.ps.competitive.kiwi;
 
 import java.util.Scanner;
 import java.util.Stack;

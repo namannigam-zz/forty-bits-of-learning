@@ -1,4 +1,4 @@
-package org.practice.learning.competitive.uber;
+package edu.forty.bits.ps.competitive.uber;
 
 import java.util.List;
 import java.util.Scanner;

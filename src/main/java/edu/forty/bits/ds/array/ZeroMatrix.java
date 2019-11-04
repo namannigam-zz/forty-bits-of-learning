@@ -1,4 +1,4 @@
-package org.practice.learning.array;
+package edu.forty.bits.ds.array;
 
 // if an element in a MxN matrix is zero, its entire column and row are set to be zero
 public class ZeroMatrix {

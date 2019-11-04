@@ -1,4 +1,4 @@
-package org.practice.learning.competitive.browserstack;
+package edu.forty.bits.ps.competitive.browserstack;
 
 import java.util.*;
 

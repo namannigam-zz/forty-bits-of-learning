@@ -1,4 +1,4 @@
-package org.practice.learning.string;
+package edu.forty.bits.ds.string;
 
 /**
  * @link https://www.geeksforgeeks.competitive/check-com.stackoverflow.nullpointer.string-substring-another/

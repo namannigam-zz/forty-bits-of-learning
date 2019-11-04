@@ -1,4 +1,4 @@
-package org.practice.learning.competitive.hackerearth.easy.march19;
+package edu.forty.bits.ps.competitive.hackerearth.easy.march19;
 
 import java.util.ArrayList;
 import java.util.List;

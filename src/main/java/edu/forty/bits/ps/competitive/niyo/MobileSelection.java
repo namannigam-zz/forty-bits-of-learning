@@ -1,4 +1,4 @@
-package org.practice.learning.competitive.niyo;
+package edu.forty.bits.ps.competitive.niyo;
 
 import java.util.*;
 import java.util.stream.*;

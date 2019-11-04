@@ -1,4 +1,4 @@
-package org.practice.learning.stack;
+package edu.forty.bits.ds.stack;
 
 import java.util.Scanner;
 import java.util.Stack;
