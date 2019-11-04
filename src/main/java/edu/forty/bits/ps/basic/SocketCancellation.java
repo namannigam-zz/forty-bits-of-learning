@@ -1,65 +1,64 @@
 package edu.forty.bits.ps.basic;
 
-import java.net.*;
-import java.io.*;
+import java.io.IOException;
+import java.net.ServerSocket;
+import java.net.Socket;
 
 /**
- *
- * @see <href>https://10kloc.wordpress.com/2013/03/03/java-multithreading-steeplechase-stopping-threads/</href>
- * Demonstrates non-standard thread cancellation.
+ * @see
+ *     <href>https://10kloc.wordpress.com/2013/03/03/java-multithreading-steeplechase-stopping-threads/</href>
+ *     Demonstrates non-standard thread cancellation.
  */
 public class SocketCancellation {
 
-    /**
-     * ServerSocket.accept() doesn't detect or respond to interruption. The
-     * class below overrides the interrupt() method to support non-standard
-     * cancellation by canceling the underlying ServerSocket forcing the
-     * accept() method to throw Exception, on which we act by breaking the while
-     * loop.
-     *
-     * @author umermansoor
-     */
-    static class CancelleableSocketThread extends Thread {
+  /**
+   * Main entry point.
+   *
+   * @param args
+   * @throws Exception
+   */
+  public static void main(String[] args) throws Exception {
+    CancelleableSocketThread cst = new CancelleableSocketThread(8080);
+    cst.start();
+    Thread.sleep(3000);
+    cst.interrupt();
+  }
 
-        private final ServerSocket server;
+  /**
+   * ServerSocket.accept() doesn't detect or respond to interruption. The class below overrides the
+   * interrupt() method to support non-standard cancellation by canceling the underlying
+   * ServerSocket forcing the accept() method to throw Exception, on which we act by breaking the
+   * while loop.
+   *
+   * @author umermansoor
+   */
+  static class CancelleableSocketThread extends Thread {
 
-        CancelleableSocketThread(int port) throws IOException {
-            server = new ServerSocket(port);
-        }
+    private final ServerSocket server;
 
-        @Override
-        public void interrupt() {
-            try {
-                server.close();
-            } catch (IOException ignored) {
-            } finally {
-                super.interrupt();
-            }
-        }
-
-        @Override
-        public void run() {
-            while (true) {
-                try {
-                    Socket client = server.accept();
-                } catch (Exception se) {
-                    break;
-                }
-            }
-        }
+    CancelleableSocketThread(int port) throws IOException {
+      server = new ServerSocket(port);
     }
 
-    /**
-     * Main entry point.
-     *
-     * @param args
-     *
-     * @throws Exception
-     */
-    public static void main(String[] args) throws Exception {
-        CancelleableSocketThread cst = new CancelleableSocketThread(8080);
-        cst.start();
-        Thread.sleep(3000);
-        cst.interrupt();
+    @Override
+    public void interrupt() {
+      try {
+        server.close();
+      } catch (IOException ignored) {
+      } finally {
+        super.interrupt();
+      }
     }
+
+    @Override
+    public void run() {
+      while (true) {
+        try {
+          Socket client = server.accept();
+        } catch (Exception se) {
+          break;
+        }
+      }
+    }
+  }
 }

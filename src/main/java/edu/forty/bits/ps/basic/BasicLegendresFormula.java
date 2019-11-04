@@ -4,67 +4,64 @@ package edu.forty.bits.ps.basic;
 // a number (which may be composite) that
 // divides factorial.
 
-/**
- * @see <href>https://www.geeksforgeeks.org/find-maximum-power-number-divides-factorial/</href>
- */
+/** @see <href>https://www.geeksforgeeks.org/find-maximum-power-number-divides-factorial/</href> */
 public class BasicLegendresFormula {
 
-
-    // for find maximum power of prime number
-    // p which can divide fact number
-    private static int findPowerPrime(int fact, int p) {
-        int res = 0;
-        while (fact > 0) {
-            res += fact / p;
-            fact /= p;
-        }
-
-        return res;
+  // for find maximum power of prime number
+  // p which can divide fact number
+  private static int findPowerPrime(int fact, int p) {
+    int res = 0;
+    while (fact > 0) {
+      res += fact / p;
+      fact /= p;
     }
 
-    // Returns sum of all factors of n.
-    private static int findPowerComposite(int fact, int n) {
-        // To store result (minimum power of a
-        // prime factor that divides fact! )
-        int res = Integer.MAX_VALUE;
+    return res;
+  }
 
-        // Traverse through all prime factors
-        // of n.
-        for (int i = 2; i <= Math.sqrt(n); i++) {
+  // Returns sum of all factors of n.
+  private static int findPowerComposite(int fact, int n) {
+    // To store result (minimum power of a
+    // prime factor that divides fact! )
+    int res = Integer.MAX_VALUE;
 
-            // counter for count the
-            // power of prime number
-            int count = 0;
-            if (n % i == 0) {
-                count++;
-                n = n / i;
-            }
+    // Traverse through all prime factors
+    // of n.
+    for (int i = 2; i <= Math.sqrt(n); i++) {
 
-            if (count > 0) {
+      // counter for count the
+      // power of prime number
+      int count = 0;
+      if (n % i == 0) {
+        count++;
+        n = n / i;
+      }
 
-                // Maximum power of i that divides
-                // fact!. We divide by count to
-                // handle multiple occurrences of
-                // a prime factor.
-                int curr_pow = findPowerPrime(fact, i) / count;
-                res = Math.min(res, curr_pow);
-            }
-        }
+      if (count > 0) {
 
-        // This condition is to handle
-        // the case when n is a prime
-        // number greater than 2.
-        if (n >= 2) {
-            int curr_pow = findPowerPrime(fact, n);
-            res = Math.min(res, curr_pow);
-        }
-
-        return res;
+        // Maximum power of i that divides
+        // fact!. We divide by count to
+        // handle multiple occurrences of
+        // a prime factor.
+        int curr_pow = findPowerPrime(fact, i) / count;
+        res = Math.min(res, curr_pow);
+      }
     }
 
-    // Driver code
-    public static void main(String[] args) {
-        int fact = 146, n = 5;
-        System.out.println(findPowerComposite(fact, n));
+    // This condition is to handle
+    // the case when n is a prime
+    // number greater than 2.
+    if (n >= 2) {
+      int curr_pow = findPowerPrime(fact, n);
+      res = Math.min(res, curr_pow);
     }
+
+    return res;
+  }
+
+  // Driver code
+  public static void main(String[] args) {
+    int fact = 146, n = 5;
+    System.out.println(findPowerComposite(fact, n));
+  }
 }
