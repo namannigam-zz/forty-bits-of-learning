@@ -25,12 +25,12 @@ public class MobileSelection {
    * <p>Input Format
    *
    * <p>First line contains an integer N N denoting number of mobile phones in John's shop. Each of
-   * the next N N lines contains a com.stackoverflow.nullpointer.string S S followed by four
+   * the next N N lines contains a string S S followed by four
    * integers A A, B B, C C and D D respectively where S S denotes the operating system of the
    * phone, A A denotes the ram size of the phone, B B denotes the memory space of the phone, C C
    * denotes the price of the phone and D D denotes the rating of the phone. Next line contains an
    * integer Q Q denoting the number of customers who have visited John's shop. Each of the next Q Q
-   * lines contains a com.stackoverflow.nullpointer.string H H followed by three integers E E, F F
+   * lines contains a string H H followed by three integers E E, F F
    * and G G respectively where H H denotes the choice of operating system of the phone required by
    * the customer, E E denotes the choice of ram size of the phone required by the customer, F F
    * denotes the choice of memory space of the phone required by the customer and G G denotes the

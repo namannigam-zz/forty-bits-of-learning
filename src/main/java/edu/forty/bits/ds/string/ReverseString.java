@@ -10,7 +10,7 @@ public class ReverseString {
   public static void reverseUsingByteArray() {
     String input = "GeeksforGeeks";
 
-    // getBytes() method to convert com.stackoverflow.nullpointer.string into bytes[]
+    // getBytes() method to convert string into bytes[]
     byte[] strAsByteArray = input.getBytes();
 
     byte[] result = new byte[strAsByteArray.length];

@@ -26,13 +26,7 @@ public class BasicStringUtility {
     System.out.println(str.split(" ")[1]);
   }
 
-  // This is a O(nlogn) approach of sorting a com.stackoverflow.nullpointer.string irrespective of
-  // any further conditions
-  public static String sortString(String input) {
-    char[] chars = input.toCharArray();
-    Arrays.sort(chars);
-    return new String(chars);
-  }
+
 
   public static int spacesInString(char[] chars, int length) {
     return (int) IntStream.range(0, length).filter(i -> chars[i] == ' ').count();

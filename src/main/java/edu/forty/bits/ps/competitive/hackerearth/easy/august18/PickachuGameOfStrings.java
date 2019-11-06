@@ -21,8 +21,8 @@ import java.util.Scanner;
  * <p>s and t consists of uppercase English letters only Input format:
  *
  * <p>First line contains an integer , the length of strings and Second line contains
- * com.stackoverflow.nullpointer.string of length Third line contains
- * com.stackoverflow.nullpointer.string of length
+ * string of length Third line contains
+ * string of length
  */
 public class PickachuGameOfStrings {
 

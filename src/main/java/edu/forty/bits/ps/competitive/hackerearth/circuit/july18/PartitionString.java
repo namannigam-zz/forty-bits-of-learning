@@ -8,17 +8,17 @@ import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 /**
- * Given a com.stackoverflow.nullpointer.string S and N strings T1,T2,...TN. A
- * com.stackoverflow.nullpointer.string is considered good iff we can reorder its characters such
- * that it becomes some com.stackoverflow.nullpointer.string . You are asked to count the number of
+ * Given a string S and N strings T1,T2,...TN. A
+ * string is considered good iff we can reorder its characters such
+ * that it becomes some string . You are asked to count the number of
  * ways to partition into several good substrings. As the answer can be very large, we are only
  * interested in modulo .
  *
  * <p>Input Format
  *
- * <p>The first line contains a com.stackoverflow.nullpointer.string and an integer .
+ * <p>The first line contains a string and an integer .
  *
- * <p>The next lines, each line contains a com.stackoverflow.nullpointer.string .
+ * <p>The next lines, each line contains a string .
  *
  * <p>All characters in strings are lowercase English letters.
  *

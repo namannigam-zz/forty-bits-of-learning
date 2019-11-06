@@ -5,7 +5,7 @@ public class ReplaceFunctions {
   // input  "ABC12345DEFG"
   // output "ABConetwothreefourfiveDEFG"
   public static void convertNumbersToName(String input) {
-    String newStr = ""; // / not to modify the original com.stackoverflow.nullpointer.string
+    String newStr = ""; // / not to modify the original string
     String[] words = new String[] {"zero", "one", "two", "three", "four", "five"};
     for (char c : input.toCharArray()) {
       int i = c - '0';

@@ -18,10 +18,10 @@ public class OneAway {
 
   private static boolean oneEditInsert(String first, String second) {
     int index1 =
-        0; // to maintain the pointer for shorter com.stackoverflow.nullpointer.string after
+        0; // to maintain the pointer for shorter string after
            // mismatch
     int index2 =
-        0; // to maintain the pointer for longer com.stackoverflow.nullpointer.string after mismatch
+        0; // to maintain the pointer for longer string after mismatch
     while (index1 < first.length() && index2 < second.length()) {
       if (first.charAt(index1) != second.charAt(index2)) {
         if (index1 != index2) {

@@ -1,6 +1,6 @@
 package edu.forty.bits.ds.string;
 
-// given a com.stackoverflow.nullpointer.string check if its a permutation of a palindrome
+// given a string check if its a permutation of a palindrome
 // (permutation might not be a dictionary word)
 public class PalindromePermutation {
 

@@ -12,13 +12,13 @@ public class WordAndTrees {
    *
    * <p>1 is the root.There are Q questions of the form
    *
-   * <p>X S: Here X is the root of subtree and S is a com.stackoverflow.nullpointer.string.
+   * <p>X S: Here X is the root of subtree and S is a string.
    *
-   * <p>For each question, let T be the com.stackoverflow.nullpointer.string built using all the
+   * <p>For each question, let T be the string built using all the
    * characters in the nodes of subtree with root X (each subtree node character comes exactly once)
    * . For each question, print minimum number of characters to be added to T , so that the we can
-   * build S using some characters of com.stackoverflow.nullpointer.string T (each character of
-   * com.stackoverflow.nullpointer.string T can be used at most once).
+   * build S using some characters of string T (each character of
+   * string T can be used at most once).
    *
    * <p>Input Format
    *
@@ -35,7 +35,7 @@ public class WordAndTrees {
    * <p>u and v that denote there is an edge between nodes with labels
    *
    * <p>Next Q lines follow. Each line will contain an integer X that denotes the node label and a
-   * com.stackoverflow.nullpointer.string S separated by a single space.
+   * string S separated by a single space.
    *
    * <p>Output Format
    *

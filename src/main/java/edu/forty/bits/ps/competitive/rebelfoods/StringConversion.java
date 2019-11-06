@@ -22,12 +22,12 @@ public class StringConversion {
    *
    * <p>Write a function:
    *
-   * <p>function solution (com.stackoverflow.nullpointer.string A,
-   * com.stackoverflow.nullpointer.string B) {} that given 2 strings A and B, returns the minimum
+   * <p>function solution (string A,
+   * string B) {} that given 2 strings A and B, returns the minimum
    * no. of tasks required to do so and "Not possible" if the solution is not possible to derive.
    *
    * <p>Input Format Input would be the 2 strings in consideration one in each line. Each
-   * com.stackoverflow.nullpointer.string is non-empty and will consist of lower case English
+   * string is non-empty and will consist of lower case English
    * characters only, from 'a' to 'z'.
    *
    * <p>Output Format If the two strings could be made identical print the minimum no. of tasks

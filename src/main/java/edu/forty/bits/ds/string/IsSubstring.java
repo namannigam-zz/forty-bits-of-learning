@@ -2,7 +2,7 @@ package edu.forty.bits.ds.string;
 
 /**
  * @link
- *     https://www.geeksforgeeks.competitive/check-com.stackoverflow.nullpointer.string-substring-another/
+ *     https://www.geeksforgeeks.competitive/check-string-substring-another/
  */
 public class IsSubstring {
 

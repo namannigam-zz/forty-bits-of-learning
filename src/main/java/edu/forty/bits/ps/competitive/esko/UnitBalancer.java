@@ -19,14 +19,14 @@ import java.util.stream.IntStream;
  * <p>--Input-- First line contains name of all the units separated by comma - no spaces If there
  * are M units in the above line then there will be M-1 lines in the input that defines relation
  * between the quanitites. The input format of the relationship between the units is - a = bc where
- * a is the com.stackoverflow.nullpointer.string that denotes unit on the left hand side of the
+ * a is the string that denotes unit on the left hand side of the
  * eqquation , then followed by the space is the = symbol , then followed by space is an integer
- * value b and then followed by space is the com.stackoverflow.nullpointer.string c that denotes
+ * value b and then followed by space is the string c that denotes
  * unit on the right hand side.
  *
  * <p>Output
  *
- * <p>In the output you need to print a single com.stackoverflow.nullpointer.string that denotes
+ * <p>In the output you need to print a single string that denotes
  * relation between all the units in the descending order of their value as per the sample output.
  *
  * <p>Constraint 1 <= M <= 10

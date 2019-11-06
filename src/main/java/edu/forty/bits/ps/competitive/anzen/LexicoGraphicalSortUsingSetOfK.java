@@ -4,13 +4,13 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 /**
- * Alex has a com.stackoverflow.nullpointer.string S of length N consisting of lowercase alphabets.
- * He wants to find lexicographically smallest com.stackoverflow.nullpointer.string X of length N
+ * Alex has a string S of length N consisting of lowercase alphabets.
+ * He wants to find lexicographically smallest string X of length N
  * that can be formed using the following operation. In one operation, he can select any one
- * character among the at most first K characters of com.stackoverflow.nullpointer.string S, remove
- * it from com.stackoverflow.nullpointer.string S and append it to
- * com.stackoverflow.nullpointer.string X. He can apply this operation as many times as he wants.
- * Help Alex find the com.stackoverflow.nullpointer.string X.
+ * character among the at most first K characters of string S, remove
+ * it from string S and append it to
+ * string X. He can apply this operation as many times as he wants.
+ * Help Alex find the string X.
  */
 // TODO - optmise on time (2.0015 sec)
 public class LexicoGraphicalSortUsingSetOfK {

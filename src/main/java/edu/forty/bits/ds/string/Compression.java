@@ -1,15 +1,15 @@
 package edu.forty.bits.ds.string;
 
-// compress a com.stackoverflow.nullpointer.string with representation such that aabcccccaa is
+// compress a string with representation such that aabcccccaa is
 // represented as a2b1c5a2,
 // but if the representation is not shorter then return the original
-// com.stackoverflow.nullpointer.string
+// string
 public class Compression {
 
   // the solution if O(n+k^2) since the n iterations require k (different character sequences)
   // concatenation
   private static String compressBad(String str) {
-    // convert the complete com.stackoverflow.nullpointer.string using consecutive pointer and then
+    // convert the complete string using consecutive pointer and then
     // check the length with original
     String compressedString = "";
     int consecutive = 0;
@@ -23,7 +23,7 @@ public class Compression {
   }
 
   private static String compressOptimised(String str) {
-    // convert the complete com.stackoverflow.nullpointer.string using consecutive pointer and then
+    // convert the complete string using consecutive pointer and then
     // check the length with original
     String compressedString;
     int consecutive = 0;
@@ -43,9 +43,9 @@ public class Compression {
 
   private static String avoidCreatingAlternateString(String str) {
     // this splits up the task into two steps
-    // 1. count the total characters of the compressed com.stackoverflow.nullpointer.string
-    // 2. using com.stackoverflow.nullpointer.string builder create the
-    // com.stackoverflow.nullpointer.string only if required
+    // 1. count the total characters of the compressed string
+    // 2. using string builder create the
+    // string only if required
     int count = countCompressedCharacters(str);
     if (count >= str.length()) {
       return str;

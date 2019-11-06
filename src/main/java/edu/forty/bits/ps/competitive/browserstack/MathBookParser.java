@@ -7,7 +7,7 @@ public class MathBookParser {
   //    Imagine a Maths equation represented in a grid or table (similar to Math books used in
   // school). Each cell in the grid is used to write in either a number, a mathematical operator or
   // be blank. An jdk.exception to this is when we need to write a divisional
-  // com.stackoverflow.nullpointer.expression. Here's an example,
+  // expression. Here's an example,
   //
   //    enter image description here
   //
@@ -19,8 +19,8 @@ public class MathBookParser {
   //    Notice the 3 consecutive underscores '_' used to represent a single division operator.
   //
   //            Problem
-  //    The math com.stackoverflow.nullpointer.expression will be given to you in a comma separated
-  // format where the full com.stackoverflow.nullpointer.expression will evaluate to one value.
+  //    The math expression will be given to you in a comma separated
+  // format where the full expression will evaluate to one value.
   // Valid mathematical operators that can be given are, +, *, - and _ (underscore). The '_'
   // operator will signify the division operator. The equation needs to be evaluated using the
   // standard BODMAS rules.
@@ -58,7 +58,7 @@ public class MathBookParser {
   //
   // 4	+	2	*
   //    _	_	_
-  //    For invalid expressions your solution must output the com.stackoverflow.nullpointer.string
+  //    For invalid expressions your solution must output the string
   // INVALID EXPRESSION.
   //
   //            Sample Input

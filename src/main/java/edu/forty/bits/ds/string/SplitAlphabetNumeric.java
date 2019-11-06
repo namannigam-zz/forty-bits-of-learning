@@ -4,7 +4,7 @@ package edu.forty.bits.ds.string;
 public class SplitAlphabetNumeric {
 
   /**
-   * Check length of a com.stackoverflow.nullpointer.string is equal to the number appended at its
+   * Check length of a string is equal to the number appended at its
    * last or not.
    *
    * @see <href>http://stackoverflow.com/questions/42016147</href>
