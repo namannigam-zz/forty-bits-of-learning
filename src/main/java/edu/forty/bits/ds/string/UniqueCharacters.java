@@ -1,5 +1,7 @@
 package edu.forty.bits.ds.string;
 
+import java.util.Arrays;
+
 /**
  * Implement an algorithm to determine if a string has all unique character. What if you cannot use
  * any additional data structures.
@@ -47,6 +49,25 @@ public class UniqueCharacters {
 
   // Without using any additional data structure
   boolean isUniqueWithoutDS(String str) {
-    return false;
+    for (int i = 0; i < str.length(); i++) {
+      for (int j = i; j < str.length(); j++) {
+        if (str.charAt(i) == str.charAt(j)) {
+          return false;
+        }
+      }
+    }
+    return true;
+  }
+
+  // alternatively one can sort the character array first and then compare adjacent elements.
+  boolean isUniqueWithoutDSOptimised(String str) {
+    char[] chars = str.toCharArray();
+    Arrays.sort(chars); // time complexity of O(n log(n)) for n characters in the string
+    for (int i = 0; i < chars.length - 1; i++) {
+      if (chars[i] == chars[i + 1]) {
+        return false;
+      }
+    }
+    return true;
   }
 }
