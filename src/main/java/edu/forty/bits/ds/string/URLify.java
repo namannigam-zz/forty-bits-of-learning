@@ -14,7 +14,7 @@ public class URLify {
     int spaces = spacesInString(str, trueLength);
     // determine the extra characters required (+2 for each space)
     int index = trueLength + spaces * 2;
-    if (trueLength < str.length) str[trueLength] = '\0'; // end array in case of extra spaces
+    if (index < str.length) str[index] = '\0'; // end array in case of extra spaces
     // traverse in reverse order and replace characters while updating the index
     for (int i = trueLength; i >= 0 && index >= 0; i--) {
       if (str[i] == ' ') {
