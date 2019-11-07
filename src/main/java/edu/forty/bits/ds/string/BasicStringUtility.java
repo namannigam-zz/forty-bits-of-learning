@@ -26,16 +26,6 @@ public class BasicStringUtility {
     System.out.println(str.split(" ")[1]);
   }
 
-
-
-  public static int spacesInString(char[] chars, int length) {
-    return (int) IntStream.range(0, length).filter(i -> chars[i] == ' ').count();
-  }
-
-  public static int spacesInString(String chars, int length) {
-    return (int) IntStream.range(0, length).filter(i -> chars.charAt(i) == ' ').count();
-  }
-
   public static int getCharNumber(Character c) {
     int a = Character.getNumericValue('a');
     int z = Character.getNumericValue('z');
