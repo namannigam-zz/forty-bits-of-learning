@@ -5,9 +5,9 @@ import java.util.stream.IntStream;
 /**
  * Write a method ot replace all spaces inn a string with "%20". You may assume that
  * the string has sufficient space at the end to hold the characters, and that you are given the "true" length
- * of the string. (For in-place operattions in Java use character array as strings are immutable.)
+ * of the string. (For in-place operations in Java use character array as strings are immutable.)
  */
-public class URLify {
+public class URLConversion {
 
   char[] convertSpacesToUrl(char[] str, int trueLength) {
     // one traversal to count the spaces given the exact length of the string
