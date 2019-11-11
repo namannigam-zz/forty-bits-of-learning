@@ -11,7 +11,7 @@ public class PalindromePermutation {
   // and then check them for them being a palindrome!!
 
   // count the number of odd characters, should be exactly one
-  public static boolean palindromePermutation(String string) {
+  boolean palindromePermutation(String string) {
     int[] chars = new int[128];
     // this is a O(n) approach with O(1) space
     for (char ch : string.toCharArray()) {
@@ -32,7 +32,7 @@ public class PalindromePermutation {
 
   // the runtime with a still remains O(n)
   // the optimisation helps to reduce iterating only once instead of twice
-  public static boolean palindromePermutationOptimisation(String string) {
+  boolean palindromePermutationOptimisation(String string) {
     int oddCount = 0;
     int[] chars = new int[128]; // use basic utility of 'z'-'a'+1 to count array.
     // this is a O(n) approach with O(1) space
