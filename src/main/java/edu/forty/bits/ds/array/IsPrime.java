@@ -26,4 +26,8 @@ public class IsPrime {
     }
     return true;
   }
+
+  boolean isPrimeStreamOptimised(int n) {
+    return IntStream.iterate(2, i -> i * i <= n, i -> i + 1).noneMatch(i -> n % i == 0);
+  }
 }
