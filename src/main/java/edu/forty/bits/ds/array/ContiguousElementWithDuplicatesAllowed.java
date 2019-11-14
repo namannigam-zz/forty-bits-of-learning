@@ -1,12 +1,8 @@
 package edu.forty.bits.ds.array;
 
-public class ContigousElementWithDuplicatesAllowed {
+public class ContiguousElementWithDuplicatesAllowed {
 
-  /**
-   * @see
-   *     <href>https://www.geeksforgeeks.org/check-array-contains-contiguous-integers-duplicates-allowed/</href>
-   */
-
+  // https://www.geeksforgeeks.org/check-array-contains-contiguous-integers-duplicates-allowed
   // function to check whether the array contains
   // a set of contiguous integers
   //    boolean areElementsContiguous(int arr[], int n) {
