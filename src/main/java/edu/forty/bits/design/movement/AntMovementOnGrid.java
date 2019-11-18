@@ -1,4 +1,4 @@
-package edu.forty.bits.ds.array;
+package edu.forty.bits.design.movement;
 
 import lombok.Getter;
 
@@ -12,11 +12,23 @@ import lombok.Getter;
  * is K. You should print the final grid and return nothing.
  */
 public class AntMovementOnGrid {
-  void printKMoves(int K) {}
 
-  @Getter
-  static class Grid {
-    int len;
-    int wid;
+  public static void main(String[] args) {
+    Board board = new Board();
+//    Grid grid = new Grid();
+    System.out.println(board.toString());
+    for (int i = 0; i < 100; i++) {
+      System.out.println("\n\n---- MOVE " + i + " ----");
+      board.move();
+      String bs = board.toString();
+      System.out.println(bs);
+
+      //      grid.move();
+      //      String gs = grid.toString();
+      //      System.out.println(gs);
+
+      //      boolean equals = bs.equals(gs);
+      //      System.out.println(equals);
+    }
   }
 }
