@@ -7,11 +7,11 @@ import java.net.Socket;
 public class MultiThreadedSteepleChase {
 
   /**
-   * Don't simpley execute this code for the sake of it. Understand the difference between the
+   * Don't simply execute this code for the sake of it. Understand the difference between the
    * responsive and the oblivious thread created below.
    *
    * @param args convertNumbersToName args
-   * @throws Exception when trying to interrup the thread forcefully
+   * @throws Exception when trying to interrupt the thread forcefully
    */
   public static void main(String[] args) throws Exception {
 
