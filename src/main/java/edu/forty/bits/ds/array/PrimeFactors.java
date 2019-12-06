@@ -4,8 +4,7 @@ public class PrimeFactors {
 
   /**
    * @see <href>https://www.geeksforgeeks.org/print-all-prime-factors-of-a-given-number</href>
-   *     <p>
-   *     <p>A function to print all prime factors of a given number n
+   * A function to print all prime factors of a given number n
    */
   public static void primeFactors(int n) {
     // Print the number of 2s that divide n
