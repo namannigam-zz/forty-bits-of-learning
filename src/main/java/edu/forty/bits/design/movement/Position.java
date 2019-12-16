@@ -8,10 +8,10 @@ import lombok.Getter;
 @EqualsAndHashCode
 @AllArgsConstructor
 public class Position {
-  int row;
-  int column;
+    int row;
+    int column;
 
-  public Position clone() {
-    return new Position(row, column);
-  }
+    public Position clone() {
+        return new Position(row, column);
+    }
 }

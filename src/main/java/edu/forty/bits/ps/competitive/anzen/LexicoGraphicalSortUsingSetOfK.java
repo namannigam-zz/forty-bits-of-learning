@@ -15,43 +15,43 @@ import java.util.Scanner;
 // TODO - optmise on time (2.0015 sec)
 public class LexicoGraphicalSortUsingSetOfK {
 
-  public static void main(String[] args) {
+    public static void main(String[] args) {
 
-    Scanner scanner = new Scanner(System.in);
-    String inputString = scanner.next();
-    int N = inputString.length();
-    int K = scanner.nextInt();
+        Scanner scanner = new Scanner(System.in);
+        String inputString = scanner.next();
+        int N = inputString.length();
+        int K = scanner.nextInt();
 
-    // Contradictory statement "He can apply this operation as many times as he wants" Vs "Similarly
-    // after
-    // applying the operation n times"
+        // Contradictory statement "He can apply this operation as many times as he wants" Vs "Similarly
+        // after
+        // applying the operation n times"
 
-    if (N == K) {
-      System.out.println(sortCharacters(inputString));
-    } else {
-      StringBuilder initialString = new StringBuilder(inputString);
-      StringBuilder finalString = new StringBuilder();
-      int i = 0;
-      while (i < N - K) {
-        char characterToBeRemoved =
-            lexicographicallySmallestCharacter(initialString.substring(0, K));
-        int indexofCharToBeRemoved = initialString.indexOf(String.valueOf(characterToBeRemoved));
-        finalString.append(characterToBeRemoved);
-        initialString.deleteCharAt(indexofCharToBeRemoved);
-        i++;
-      }
-      System.out.println(finalString + sortCharacters(initialString.toString()));
+        if (N == K) {
+            System.out.println(sortCharacters(inputString));
+        } else {
+            StringBuilder initialString = new StringBuilder(inputString);
+            StringBuilder finalString = new StringBuilder();
+            int i = 0;
+            while (i < N - K) {
+                char characterToBeRemoved =
+                        lexicographicallySmallestCharacter(initialString.substring(0, K));
+                int indexofCharToBeRemoved = initialString.indexOf(String.valueOf(characterToBeRemoved));
+                finalString.append(characterToBeRemoved);
+                initialString.deleteCharAt(indexofCharToBeRemoved);
+                i++;
+            }
+            System.out.println(finalString + sortCharacters(initialString.toString()));
+        }
     }
-  }
 
-  private static char lexicographicallySmallestCharacter(String input) {
-    String temp = sortCharacters(input);
-    return temp.charAt(0);
-  }
+    private static char lexicographicallySmallestCharacter(String input) {
+        String temp = sortCharacters(input);
+        return temp.charAt(0);
+    }
 
-  private static String sortCharacters(String lastThreeCharacters) {
-    char[] characterList = lastThreeCharacters.toCharArray();
-    Arrays.sort(characterList);
-    return new String(characterList);
-  }
+    private static String sortCharacters(String lastThreeCharacters) {
+        char[] characterList = lastThreeCharacters.toCharArray();
+        Arrays.sort(characterList);
+        return new String(characterList);
+    }
 }

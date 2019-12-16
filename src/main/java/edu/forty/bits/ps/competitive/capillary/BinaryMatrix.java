@@ -24,21 +24,21 @@ import java.util.stream.IntStream;
  */
 public class BinaryMatrix {
 
-  public static void main(String[] args) {
+    public static void main(String[] args) {
 
-    Scanner scanner = new Scanner(System.in);
-    int N = scanner.nextInt();
-    int M = scanner.nextInt();
+        Scanner scanner = new Scanner(System.in);
+        int N = scanner.nextInt();
+        int M = scanner.nextInt();
 
-    int maxIndex = 0;
-    String maxValue = IntStream.range(0, M).mapToObj(i -> "0").collect(Collectors.joining());
-    for (int i = 0; i < N; i++) {
-      String num = scanner.next();
-      if (maxValue.compareTo(num) < 0) {
-        maxIndex = i;
-        maxValue = num;
-      }
+        int maxIndex = 0;
+        String maxValue = IntStream.range(0, M).mapToObj(i -> "0").collect(Collectors.joining());
+        for (int i = 0; i < N; i++) {
+            String num = scanner.next();
+            if (maxValue.compareTo(num) < 0) {
+                maxIndex = i;
+                maxValue = num;
+            }
+        }
+        System.out.println(maxIndex + 1);
     }
-    System.out.println(maxIndex + 1);
-  }
 }

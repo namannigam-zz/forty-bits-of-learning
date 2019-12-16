@@ -1,9 +1,9 @@
 package edu.forty.bits.ds.graph;
 
 public class Graph {
-  GraphNode[] nodes;
+    GraphNode[] nodes;
 
-  public GraphNode[] getNodes() {
-    return nodes;
-  }
+    public GraphNode[] getNodes() {
+        return nodes;
+    }
 }

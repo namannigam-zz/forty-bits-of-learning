@@ -23,40 +23,40 @@ import java.util.Scanner;
  */
 public class OldAndColdNumbers {
 
-  public static void main(String[] args) {
+    public static void main(String[] args) {
 
-    Scanner scanner = new Scanner(System.in);
-    int T = scanner.nextInt();
+        Scanner scanner = new Scanner(System.in);
+        int T = scanner.nextInt();
 
-    for (int i = 0; i < T; i++) {
-      int N = scanner.nextInt(); // array size
-      int[] arr = new int[N];
-      for (int j = 0; j < N; j++) {
-        arr[j] = scanner.nextInt();
-      }
-      int Q = scanner.nextInt(); // queries
+        for (int i = 0; i < T; i++) {
+            int N = scanner.nextInt(); // array size
+            int[] arr = new int[N];
+            for (int j = 0; j < N; j++) {
+                arr[j] = scanner.nextInt();
+            }
+            int Q = scanner.nextInt(); // queries
 
-      for (int k = 0; k < Q; k++) {
-        int L = scanner.nextInt();
-        int R = scanner.nextInt();
-        int countColdNumber = 0;
-        for (int m = L - 1; m < R; m++) {
-          if (arr[m] == 1 || arr[m] % 2 == 0) {
-            countColdNumber--;
-          } else {
-            countColdNumber++;
-          }
+            for (int k = 0; k < Q; k++) {
+                int L = scanner.nextInt();
+                int R = scanner.nextInt();
+                int countColdNumber = 0;
+                for (int m = L - 1; m < R; m++) {
+                    if (arr[m] == 1 || arr[m] % 2 == 0) {
+                        countColdNumber--;
+                    } else {
+                        countColdNumber++;
+                    }
+                }
+
+                if (countColdNumber > 0) {
+                    System.out.println(0);
+                    if (countColdNumber % 2 == 0) {
+                        System.out.println(countColdNumber / 2);
+                    } else {
+                        System.out.println((countColdNumber / 2) + 1);
+                    }
+                }
+            }
         }
-
-        if (countColdNumber > 0) {
-          System.out.println(0);
-          if (countColdNumber % 2 == 0) {
-            System.out.println(countColdNumber / 2);
-          } else {
-            System.out.println((countColdNumber / 2) + 1);
-          }
-        }
-      }
     }
-  }
 }

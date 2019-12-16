@@ -32,28 +32,28 @@ import java.util.stream.IntStream;
  */
 public class PickachuAndDoubleTeam {
 
-  public static void main(String[] args) {
-    Scanner scanner = new Scanner(System.in);
-    int n = scanner.nextInt();
-    int a = scanner.nextInt();
-    int b = scanner.nextInt();
-    int r = scanner.nextInt();
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int n = scanner.nextInt();
+        int a = scanner.nextInt();
+        int b = scanner.nextInt();
+        int r = scanner.nextInt();
 
-    List<XYR> xyrList =
-        IntStream.range(0, n)
-            .mapToObj(i -> new XYR(scanner.nextInt(), scanner.nextInt(), scanner.nextInt()))
-            .collect(Collectors.toList());
-  }
-
-  private static class XYR {
-    int x;
-    int y;
-    int r;
-
-    public XYR(int x, int y, int r) {
-      this.x = x;
-      this.y = y;
-      this.r = r;
+        List<XYR> xyrList =
+                IntStream.range(0, n)
+                        .mapToObj(i -> new XYR(scanner.nextInt(), scanner.nextInt(), scanner.nextInt()))
+                        .collect(Collectors.toList());
     }
-  }
+
+    private static class XYR {
+        int x;
+        int y;
+        int r;
+
+        public XYR(int x, int y, int r) {
+            this.x = x;
+            this.y = y;
+            this.r = r;
+        }
+    }
 }

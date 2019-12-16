@@ -29,22 +29,22 @@ import java.util.stream.IntStream;
  */
 public class EqualMedian {
 
-  public static void main(String[] args) {
-    Scanner scanner = new Scanner(System.in);
-    int T = scanner.nextInt();
-    IntStream.range(0, T)
-        .map(i -> scanner.nextInt())
-        .forEach(
-            N -> {
-              int medianIndex = N / 2;
-              List<Integer> A =
-                  IntStream.range(0, N)
-                      .mapToObj(j -> scanner.nextInt())
-                      .collect(Collectors.toCollection(() -> new ArrayList<>(N)));
-              List<Integer> B =
-                  IntStream.range(0, N)
-                      .mapToObj(j -> scanner.nextInt())
-                      .collect(Collectors.toCollection(() -> new ArrayList<>(N)));
-            });
-  }
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int T = scanner.nextInt();
+        IntStream.range(0, T)
+                .map(i -> scanner.nextInt())
+                .forEach(
+                        N -> {
+                            int medianIndex = N / 2;
+                            List<Integer> A =
+                                    IntStream.range(0, N)
+                                            .mapToObj(j -> scanner.nextInt())
+                                            .collect(Collectors.toCollection(() -> new ArrayList<>(N)));
+                            List<Integer> B =
+                                    IntStream.range(0, N)
+                                            .mapToObj(j -> scanner.nextInt())
+                                            .collect(Collectors.toCollection(() -> new ArrayList<>(N)));
+                        });
+    }
 }

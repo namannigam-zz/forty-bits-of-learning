@@ -20,42 +20,42 @@ import java.util.*;
  */
 public class RectangleAligning {
 
-  public static void main(String args[]) throws Exception {
-    BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-    int N = Integer.parseInt(br.readLine());
-    List<Rectangle> rectangles = new ArrayList<>(N);
-    for (int i = 0; i < N; i++) {
-      StringTokenizer tk = new StringTokenizer(br.readLine());
-      rectangles.add(
-          new Rectangle(Integer.parseInt(tk.nextToken()), Integer.parseInt(tk.nextToken())));
-    }
-    List<Rectangle> rectangleList = align_rectangle(rectangles);
-    rectangleList.forEach(a -> System.out.println(a.getLength() + " " + a.getBreadth()));
-  }
-
-  private static List<Rectangle> align_rectangle(List<Rectangle> rectangles) {
-    Comparator<Rectangle> lengthComparator = Comparator.comparing(Rectangle::getLength);
-    Comparator<Rectangle> breadthComparator =
-        Collections.reverseOrder(Comparator.comparing(Rectangle::getBreadth));
-    rectangles.sort(lengthComparator.thenComparing(breadthComparator));
-    return rectangles;
-  }
-
-  private static class Rectangle {
-    int length;
-    int breadth;
-
-    Rectangle(int length, int breadth) {
-      this.length = length;
-      this.breadth = breadth;
+    public static void main(String args[]) throws Exception {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int N = Integer.parseInt(br.readLine());
+        List<Rectangle> rectangles = new ArrayList<>(N);
+        for (int i = 0; i < N; i++) {
+            StringTokenizer tk = new StringTokenizer(br.readLine());
+            rectangles.add(
+                    new Rectangle(Integer.parseInt(tk.nextToken()), Integer.parseInt(tk.nextToken())));
+        }
+        List<Rectangle> rectangleList = align_rectangle(rectangles);
+        rectangleList.forEach(a -> System.out.println(a.getLength() + " " + a.getBreadth()));
     }
 
-    public int getLength() {
-      return length;
+    private static List<Rectangle> align_rectangle(List<Rectangle> rectangles) {
+        Comparator<Rectangle> lengthComparator = Comparator.comparing(Rectangle::getLength);
+        Comparator<Rectangle> breadthComparator =
+                Collections.reverseOrder(Comparator.comparing(Rectangle::getBreadth));
+        rectangles.sort(lengthComparator.thenComparing(breadthComparator));
+        return rectangles;
     }
 
-    int getBreadth() {
-      return breadth;
+    private static class Rectangle {
+        int length;
+        int breadth;
+
+        Rectangle(int length, int breadth) {
+            this.length = length;
+            this.breadth = breadth;
+        }
+
+        public int getLength() {
+            return length;
+        }
+
+        int getBreadth() {
+            return breadth;
+        }
     }
-  }
 }

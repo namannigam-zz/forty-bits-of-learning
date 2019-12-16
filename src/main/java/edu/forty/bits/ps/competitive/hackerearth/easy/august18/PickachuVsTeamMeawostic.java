@@ -32,32 +32,32 @@ import java.util.stream.IntStream;
  */
 public class PickachuVsTeamMeawostic {
 
-  public static void main(String[] args) {
-    Scanner scanner = new Scanner(System.in);
-    int n = scanner.nextInt();
-    int k = scanner.nextInt();
-    int arr[] = IntStream.rangeClosed(1, n).map(i -> scanner.nextInt()).toArray();
-    Arrays.stream(updatedPowers(arr, k))
-        .mapToObj(anArrup -> anArrup + " ")
-        .forEach(System.out::print);
-  }
-
-  private static int[] updatedPowers(int arr[], int k) {
-    IntStream.range(0, k)
-        .flatMap(i -> IntStream.range(1, arr.length))
-        .forEach(j -> arr[j] = arr[j - 1] | arr[j]);
-    return arr;
-  }
-
-  void mainSolution(int[] a, int n, int k) {
-    int b[] = new int[100004];
-    for (int j = 0; j < k && j <= 100; j++) {
-      for (int i = 1; i < n; i++) {
-        a[i] = a[i] | b[i - 1];
-      }
-      if (n >= 0) System.arraycopy(a, 0, b, 0, n);
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int n = scanner.nextInt();
+        int k = scanner.nextInt();
+        int arr[] = IntStream.rangeClosed(1, n).map(i -> scanner.nextInt()).toArray();
+        Arrays.stream(updatedPowers(arr, k))
+                .mapToObj(anArrup -> anArrup + " ")
+                .forEach(System.out::print);
     }
 
-    IntStream.rangeClosed(1, n).mapToObj(i -> a[i] + " ").forEach(System.out::print);
-  }
+    private static int[] updatedPowers(int arr[], int k) {
+        IntStream.range(0, k)
+                .flatMap(i -> IntStream.range(1, arr.length))
+                .forEach(j -> arr[j] = arr[j - 1] | arr[j]);
+        return arr;
+    }
+
+    void mainSolution(int[] a, int n, int k) {
+        int b[] = new int[100004];
+        for (int j = 0; j < k && j <= 100; j++) {
+            for (int i = 1; i < n; i++) {
+                a[i] = a[i] | b[i - 1];
+            }
+            if (n >= 0) System.arraycopy(a, 0, b, 0, n);
+        }
+
+        IntStream.rangeClosed(1, n).mapToObj(i -> a[i] + " ").forEach(System.out::print);
+    }
 }

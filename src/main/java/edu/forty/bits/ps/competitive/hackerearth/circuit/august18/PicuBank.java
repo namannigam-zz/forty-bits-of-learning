@@ -26,50 +26,50 @@ import java.util.Scanner;
  */
 public class PicuBank {
 
-  public static void main(String[] args) {
-    Scanner scanner = new Scanner(System.in);
-    int T = scanner.nextInt();
-    for (int t = 0; t < T; t++) {
-      int D = scanner.nextInt();
-      int A = scanner.nextInt();
-      int M = scanner.nextInt();
-      int B = scanner.nextInt();
-      int X = scanner.nextInt();
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int T = scanner.nextInt();
+        for (int t = 0; t < T; t++) {
+            int D = scanner.nextInt();
+            int A = scanner.nextInt();
+            int M = scanner.nextInt();
+            int B = scanner.nextInt();
+            int X = scanner.nextInt();
 
-      System.out.println(returnMonthCount(M, A, B, X - D));
+            System.out.println(returnMonthCount(M, A, B, X - D));
 
-      //            int inHandCash = D;
-      //            int countMonth = 0;
-      //            while (inHandCash < X) {
-      //                for (int i = 0; i < M; i++) {
-      //                    if (inHandCash < X) {
-      //                        inHandCash = inHandCash + A;
-      //                        countMonth++;
-      //                    } else {
-      //                        break;
-      //                    }
-      //                }
-      //                if (inHandCash < X) {
-      //                    inHandCash = inHandCash + B;
-      //                    countMonth++;
-      //                }
-      //            }
-      //
-      //
-      //            System.out.println(countMonth);
+            //            int inHandCash = D;
+            //            int countMonth = 0;
+            //            while (inHandCash < X) {
+            //                for (int i = 0; i < M; i++) {
+            //                    if (inHandCash < X) {
+            //                        inHandCash = inHandCash + A;
+            //                        countMonth++;
+            //                    } else {
+            //                        break;
+            //                    }
+            //                }
+            //                if (inHandCash < X) {
+            //                    inHandCash = inHandCash + B;
+            //                    countMonth++;
+            //                }
+            //            }
+            //
+            //
+            //            System.out.println(countMonth);
+        }
     }
-  }
 
-  private static int returnMonthCount(int M, int A, int B, int diff) { // diff = X-D
-    int costForM1Month = (A * M) + B;
-    int countMonth = diff / costForM1Month;
-    int remaining = diff % costForM1Month;
-    int additionalMonths;
-    if (remaining % A == 0) {
-      additionalMonths = remaining / A;
-    } else {
-      additionalMonths = (remaining / A) + 1;
+    private static int returnMonthCount(int M, int A, int B, int diff) { // diff = X-D
+        int costForM1Month = (A * M) + B;
+        int countMonth = diff / costForM1Month;
+        int remaining = diff % costForM1Month;
+        int additionalMonths;
+        if (remaining % A == 0) {
+            additionalMonths = remaining / A;
+        } else {
+            additionalMonths = (remaining / A) + 1;
+        }
+        return (countMonth * (M + 1)) + additionalMonths;
     }
-    return (countMonth * (M + 1)) + additionalMonths;
-  }
 }

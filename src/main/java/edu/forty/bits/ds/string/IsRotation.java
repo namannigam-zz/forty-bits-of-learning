@@ -7,11 +7,11 @@ package edu.forty.bits.ds.string;
  */
 public class IsRotation {
 
-  // Logically 'xy' rotates to 'yx' and to make sure a string yx is a rotation of xy,
-  // you can confirm id 'yx' is a substring of "x'yx'y"
-  boolean isRotation(String s1, String s2) {
-    String temp = s1 + s1;
-    return IsSubstring.isSubstring(temp, s2) != -1;
-    //    return IsSubstring.isSubstringUsingIndexOf(temp, s2);
-  }
+    // Logically 'xy' rotates to 'yx' and to make sure a string yx is a rotation of xy,
+    // you can confirm id 'yx' is a substring of "x'yx'y"
+    boolean isRotation(String s1, String s2) {
+        String temp = s1 + s1;
+        return IsSubstring.isSubstring(temp, s2) != -1;
+        //    return IsSubstring.isSubstringUsingIndexOf(temp, s2);
+    }
 }

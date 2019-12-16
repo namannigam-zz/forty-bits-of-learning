@@ -20,34 +20,34 @@ import java.util.Scanner;
  */
 public class SpecialShop {
 
-  public static void main(String[] args) {
-    Scanner scanner = new Scanner(System.in);
-    int T = scanner.nextInt();
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int T = scanner.nextInt();
 
-    for (int i = 0; i < T; i++) {
-      long N = scanner.nextInt();
-      long A = scanner.nextInt();
-      long B = scanner.nextInt();
+        for (int i = 0; i < T; i++) {
+            long N = scanner.nextInt();
+            long A = scanner.nextInt();
+            long B = scanner.nextInt();
 
-      if (A > B) {
-        long temp = A;
-        A = B;
-        B = temp;
-      }
-      long criticalPoint = (long) (Math.round(A * N / ((float) (A + B))) - 1);
-      long minValue = Long.MAX_VALUE;
-      int count = 0;
-      while (count < 3) {
-        long remainingValue = N - criticalPoint;
-        long currentMinValue =
-            B * criticalPoint * criticalPoint + A * remainingValue * remainingValue;
-        if (currentMinValue < minValue) {
-          minValue = currentMinValue;
+            if (A > B) {
+                long temp = A;
+                A = B;
+                B = temp;
+            }
+            long criticalPoint = (long) (Math.round(A * N / ((float) (A + B))) - 1);
+            long minValue = Long.MAX_VALUE;
+            int count = 0;
+            while (count < 3) {
+                long remainingValue = N - criticalPoint;
+                long currentMinValue =
+                        B * criticalPoint * criticalPoint + A * remainingValue * remainingValue;
+                if (currentMinValue < minValue) {
+                    minValue = currentMinValue;
+                }
+                count++;
+                criticalPoint++;
+            }
+            System.out.println(minValue);
         }
-        count++;
-        criticalPoint++;
-      }
-      System.out.println(minValue);
     }
-  }
 }

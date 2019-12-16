@@ -1,7 +1,5 @@
 package edu.forty.bits.design.movement;
 
-import lombok.Getter;
-
 /**
  * An ant is sitting on an infinite grid of white and black squares. It initially faces right. At
  * each step it does the following: 1. At a white square, flip the color of the square, turn 90
@@ -13,22 +11,22 @@ import lombok.Getter;
  */
 public class AntMovementOnGrid {
 
-  public static void main(String[] args) {
-    Board board = new Board();
+    public static void main(String[] args) {
+        Board board = new Board();
 //    Grid grid = new Grid();
-    System.out.println(board.toString());
-    for (int i = 0; i < 100; i++) {
-      System.out.println("\n\n---- MOVE " + i + " ----");
-      board.move();
-      String bs = board.toString();
-      System.out.println(bs);
+        System.out.println(board.toString());
+        for (int i = 0; i < 100; i++) {
+            System.out.println("\n\n---- MOVE " + i + " ----");
+            board.move();
+            String bs = board.toString();
+            System.out.println(bs);
 
-      //      grid.move();
-      //      String gs = grid.toString();
-      //      System.out.println(gs);
+            //      grid.move();
+            //      String gs = grid.toString();
+            //      System.out.println(gs);
 
-      //      boolean equals = bs.equals(gs);
-      //      System.out.println(equals);
+            //      boolean equals = bs.equals(gs);
+            //      System.out.println(equals);
+        }
     }
-  }
 }

@@ -28,25 +28,25 @@ import java.util.stream.Stream;
  */
 public class PartitionString {
 
-  public static void main(String[] args) {
-    long M = 1000000007;
-    Scanner scanner = new Scanner(System.in);
-    String S = scanner.next();
-    int N = scanner.nextInt();
-    List<String> tStrings =
-        IntStream.range(0, N).mapToObj(i -> scanner.next()).collect(Collectors.toList());
-    List<List<String>> partitions = partitions(S).collect(Collectors.toList());
-    long count = Math.floorMod(partitions.stream().filter(tStrings::removeAll).count(), M);
-    System.out.println(count);
-  }
-
-  private static Stream<List<String>> partitions(String text) {
-    if (text.isEmpty()) {
-      return Stream.of(new ArrayList<>());
-    } else {
-      return IntStream.rangeClosed(1, text.length())
-          .boxed()
-          .flatMap(i -> partitions(text.substring(i)).peek(p -> p.add(0, text.substring(0, i))));
+    public static void main(String[] args) {
+        long M = 1000000007;
+        Scanner scanner = new Scanner(System.in);
+        String S = scanner.next();
+        int N = scanner.nextInt();
+        List<String> tStrings =
+                IntStream.range(0, N).mapToObj(i -> scanner.next()).collect(Collectors.toList());
+        List<List<String>> partitions = partitions(S).collect(Collectors.toList());
+        long count = Math.floorMod(partitions.stream().filter(tStrings::removeAll).count(), M);
+        System.out.println(count);
     }
-  }
+
+    private static Stream<List<String>> partitions(String text) {
+        if (text.isEmpty()) {
+            return Stream.of(new ArrayList<>());
+        } else {
+            return IntStream.rangeClosed(1, text.length())
+                    .boxed()
+                    .flatMap(i -> partitions(text.substring(i)).peek(p -> p.add(0, text.substring(0, i))));
+        }
+    }
 }

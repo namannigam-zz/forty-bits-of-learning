@@ -9,32 +9,32 @@ import java.util.stream.IntStream;
  */
 public class URLConversion {
 
-  char[] convertSpacesToUrl(char[] str, int trueLength) {
-    // one traversal to count the spaces given the exact length of the string
-    int spaces = spacesInString(str, trueLength);
-    // determine the extra characters required (+2 for each space)
-    int index = trueLength + spaces * 2;
-    if (index < str.length) str[index] = '\0'; // end array in case of extra spaces
-    // traverse in reverse order and replace characters while updating the index
-    for (int i = trueLength; i >= 0 && index >= 0; i--) {
-      if (str[i] == ' ') {
-        str[index] = '0';
-        str[index - 1] = '2';
-        str[index - 2] = '%';
-        index = index - 3;
-      } else {
-        str[index] = str[i];
-        index--;
-      }
+    char[] convertSpacesToUrl(char[] str, int trueLength) {
+        // one traversal to count the spaces given the exact length of the string
+        int spaces = spacesInString(str, trueLength);
+        // determine the extra characters required (+2 for each space)
+        int index = trueLength + spaces * 2;
+        if (index < str.length) str[index] = '\0'; // end array in case of extra spaces
+        // traverse in reverse order and replace characters while updating the index
+        for (int i = trueLength; i >= 0 && index >= 0; i--) {
+            if (str[i] == ' ') {
+                str[index] = '0';
+                str[index - 1] = '2';
+                str[index - 2] = '%';
+                index = index - 3;
+            } else {
+                str[index] = str[i];
+                index--;
+            }
+        }
+        return str;
     }
-    return str;
-  }
 
-  private int spacesInString(char[] chars, int length) {
-    return (int) IntStream.range(0, length).filter(i -> chars[i] == ' ').count();
-  }
+    private int spacesInString(char[] chars, int length) {
+        return (int) IntStream.range(0, length).filter(i -> chars[i] == ' ').count();
+    }
 
-  int spacesInString(String str, int length) {
-    return (int) str.chars().limit(length).filter(c -> c == (int) ' ').count();
-  }
+    int spacesInString(String str, int length) {
+        return (int) str.chars().limit(length).filter(c -> c == (int) ' ').count();
+    }
 }

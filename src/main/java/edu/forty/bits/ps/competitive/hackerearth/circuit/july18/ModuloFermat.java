@@ -19,30 +19,30 @@ import java.util.Scanner;
  */
 public class ModuloFermat {
 
-  public static void main(String[] args) {
-    Scanner scanner = new Scanner(System.in);
-    int P = scanner.nextInt();
-    long L = scanner.nextLong();
-    int count = 0;
-    for (long pow = 1; pow < L; pow++) {
-      boolean flag = false;
-      powerloop:
-      for (int i = 1; i < P; i++) {
-        for (int j = 1; j < P; j++) {
-          for (int k = 1; k < P; k++) {
-            if (equationHoldsTrue(i, j, k, pow, P)) {
-              flag = true;
-              break powerloop;
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int P = scanner.nextInt();
+        long L = scanner.nextLong();
+        int count = 0;
+        for (long pow = 1; pow < L; pow++) {
+            boolean flag = false;
+            powerloop:
+            for (int i = 1; i < P; i++) {
+                for (int j = 1; j < P; j++) {
+                    for (int k = 1; k < P; k++) {
+                        if (equationHoldsTrue(i, j, k, pow, P)) {
+                            flag = true;
+                            break powerloop;
+                        }
+                    }
+                }
             }
-          }
+            if (flag) count++;
         }
-      }
-      if (flag) count++;
+        System.out.println(count);
     }
-    System.out.println(count);
-  }
 
-  private static boolean equationHoldsTrue(int x, int y, int z, long k, int P) {
-    return (Math.pow(x, k) + Math.pow(y, k)) % P == (Math.pow(z, k) % P);
-  }
+    private static boolean equationHoldsTrue(int x, int y, int z, long k, int P) {
+        return (Math.pow(x, k) + Math.pow(y, k)) % P == (Math.pow(z, k) % P);
+    }
 }

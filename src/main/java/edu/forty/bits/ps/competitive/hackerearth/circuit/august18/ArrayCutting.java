@@ -39,38 +39,38 @@ import java.util.stream.IntStream;
  * solution.
  */
 public class ArrayCutting {
-  public static void main(String[] args) {
-    Scanner scanner = new Scanner(System.in);
-    int N = scanner.nextInt(); // 1<=N<=10000
-    int A[] = IntStream.range(0, N).map(i -> scanner.nextInt()).toArray(); // 1<=Ai<=1000
-    int K = scanner.nextInt(); // 1<=K<=floor(N/2)
-    /**
-     * if we sum the count of divisors of the each individual partition sum then it should be as
-     * minimum as possible.
-     */
-    int output[] = new int[K];
-    int minimumSum = Integer.MAX_VALUE;
-  }
-
-  private static int countDivisorsOfIndividualPartitionSum(int n) {
-    int cnt = 0;
-    for (int i = 1; i <= Math.sqrt(n); i++) {
-      if (n % i == 0) {
-        if (n / i == i) {
-          cnt++;
-        } else {
-          cnt = cnt + 2;
-        }
-      }
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int N = scanner.nextInt(); // 1<=N<=10000
+        int A[] = IntStream.range(0, N).map(i -> scanner.nextInt()).toArray(); // 1<=Ai<=1000
+        int K = scanner.nextInt(); // 1<=K<=floor(N/2)
+        /**
+         * if we sum the count of divisors of the each individual partition sum then it should be as
+         * minimum as possible.
+         */
+        int output[] = new int[K];
+        int minimumSum = Integer.MAX_VALUE;
     }
-    return cnt;
-  }
 
-  private int individualPartitionSum(int[] a) {
-    return Arrays.stream(a).sum();
-  }
+    private static int countDivisorsOfIndividualPartitionSum(int n) {
+        int cnt = 0;
+        for (int i = 1; i <= Math.sqrt(n); i++) {
+            if (n % i == 0) {
+                if (n / i == i) {
+                    cnt++;
+                } else {
+                    cnt = cnt + 2;
+                }
+            }
+        }
+        return cnt;
+    }
 
-  private int sumOfCountOfDivisorsOfIndividualPartitionSum(int... a) {
-    return Arrays.stream(a).sum();
-  }
+    private int individualPartitionSum(int[] a) {
+        return Arrays.stream(a).sum();
+    }
+
+    private int sumOfCountOfDivisorsOfIndividualPartitionSum(int... a) {
+        return Arrays.stream(a).sum();
+    }
 }

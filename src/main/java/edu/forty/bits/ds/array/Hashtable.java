@@ -7,5 +7,5 @@ package edu.forty.bits.ds.array;
  * @param <V> value type
  */
 public class Hashtable<K, V> {
-  java.util.Hashtable<K, V> hashtable = new java.util.Hashtable<>();
+    java.util.Hashtable<K, V> hashtable = new java.util.Hashtable<>();
 }

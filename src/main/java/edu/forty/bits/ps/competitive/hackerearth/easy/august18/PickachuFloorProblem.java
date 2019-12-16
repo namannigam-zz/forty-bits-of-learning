@@ -29,14 +29,14 @@ import java.util.Scanner;
  */
 public class PickachuFloorProblem {
 
-  public static void main(String[] args) {
-    Scanner scanner = new Scanner(System.in);
-    int t = scanner.nextInt();
-    for (int i = 0; i < t; i++) {
-      float n = scanner.nextLong();
-      float p = scanner.nextFloat();
-      float sum = (n * (n + 1)) / 2;
-      System.out.println((int) Math.floor(p / sum));
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int t = scanner.nextInt();
+        for (int i = 0; i < t; i++) {
+            float n = scanner.nextLong();
+            float p = scanner.nextFloat();
+            float sum = (n * (n + 1)) / 2;
+            System.out.println((int) Math.floor(p / sum));
+        }
     }
-  }
 }

@@ -30,45 +30,45 @@ import java.util.stream.IntStream;
  */
 public class PowerfulPair {
 
-  public static void main(String[] args) {
-    Scanner scanner = new Scanner(System.in);
-    int N = scanner.nextInt();
-    List<Integer> list =
-        IntStream.range(0, N)
-            .mapToObj(j -> scanner.nextInt())
-            .collect(Collectors.toCollection(() -> new ArrayList<>(N)));
-    Map<Integer, Integer> sourceToDestination =
-        IntStream.range(0, N - 1)
-            .boxed()
-            .collect(
-                Collectors.toMap(
-                    i -> scanner.nextInt(),
-                    i -> scanner.nextInt(),
-                    (a, b) -> b,
-                    () -> new HashMap<>(N - 1)));
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int N = scanner.nextInt();
+        List<Integer> list =
+                IntStream.range(0, N)
+                        .mapToObj(j -> scanner.nextInt())
+                        .collect(Collectors.toCollection(() -> new ArrayList<>(N)));
+        Map<Integer, Integer> sourceToDestination =
+                IntStream.range(0, N - 1)
+                        .boxed()
+                        .collect(
+                                Collectors.toMap(
+                                        i -> scanner.nextInt(),
+                                        i -> scanner.nextInt(),
+                                        (a, b) -> b,
+                                        () -> new HashMap<>(N - 1)));
 
-    int Q = scanner.nextInt();
-    Map<Integer, Integer> sourceToDestinationQuery =
-        IntStream.range(0, Q)
-            .boxed()
-            .collect(
-                Collectors.toMap(
-                    i -> scanner.nextInt(),
-                    i -> scanner.nextInt(),
-                    (a, b) -> b,
-                    () -> new HashMap<>(Q)));
-  }
-
-  private static boolean isPowerPair(int A, int B) {
-    return countSetBits(A ^ B) == 1;
-  }
-
-  // recursive function to count set bits
-  private static int countSetBits(int n) {
-    if (n == 0) { // base case
-      return 0;
-    } else { // if last bit set add 1 else add 0
-      return (n & 1) + countSetBits(n >> 1);
+        int Q = scanner.nextInt();
+        Map<Integer, Integer> sourceToDestinationQuery =
+                IntStream.range(0, Q)
+                        .boxed()
+                        .collect(
+                                Collectors.toMap(
+                                        i -> scanner.nextInt(),
+                                        i -> scanner.nextInt(),
+                                        (a, b) -> b,
+                                        () -> new HashMap<>(Q)));
     }
-  }
+
+    private static boolean isPowerPair(int A, int B) {
+        return countSetBits(A ^ B) == 1;
+    }
+
+    // recursive function to count set bits
+    private static int countSetBits(int n) {
+        if (n == 0) { // base case
+            return 0;
+        } else { // if last bit set add 1 else add 0
+            return (n & 1) + countSetBits(n >> 1);
+        }
+    }
 }

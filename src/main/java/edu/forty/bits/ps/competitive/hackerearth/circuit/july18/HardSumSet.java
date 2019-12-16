@@ -37,29 +37,29 @@ import java.util.stream.IntStream;
  */
 public class HardSumSet {
 
-  public static void main(String[] args) {
-    Scanner scanner = new Scanner(System.in);
-    int K = scanner.nextInt();
-    List<Integer> C =
-        IntStream.range(0, K)
-            .mapToObj(i -> scanner.nextInt())
-            .sorted()
-            .collect(Collectors.toCollection(() -> new ArrayList<>(K)));
-    List<Integer> A = new ArrayList<>();
-    List<Integer> B = new ArrayList<>();
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int K = scanner.nextInt();
+        List<Integer> C =
+                IntStream.range(0, K)
+                        .mapToObj(i -> scanner.nextInt())
+                        .sorted()
+                        .collect(Collectors.toCollection(() -> new ArrayList<>(K)));
+        List<Integer> A = new ArrayList<>();
+        List<Integer> B = new ArrayList<>();
 
-    for (int i = 0; i < C.size(); i++) {
-      C.get(i);
+        for (int i = 0; i < C.size(); i++) {
+            C.get(i);
+        }
     }
-  }
 
-  private int score(List<Integer> C, List<Integer> S, int m, int n) {
-    int score = 0;
-    for (int i = 0; i <= m - n; i++) {
-      for (int j = 1; j <= n; j++) {
-        score = score + (C.get(j) - S.get(j + 1));
-      }
+    private int score(List<Integer> C, List<Integer> S, int m, int n) {
+        int score = 0;
+        for (int i = 0; i <= m - n; i++) {
+            for (int j = 1; j <= n; j++) {
+                score = score + (C.get(j) - S.get(j + 1));
+            }
+        }
+        return score;
     }
-    return score;
-  }
 }

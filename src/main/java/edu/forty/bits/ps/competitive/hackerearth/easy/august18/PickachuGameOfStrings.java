@@ -26,25 +26,25 @@ import java.util.Scanner;
  */
 public class PickachuGameOfStrings {
 
-  public static void main(String[] args) {
-    Scanner scanner = new Scanner(System.in);
-    int n = scanner.nextInt();
-    String s = scanner.next();
-    String t = scanner.next();
-    System.out.println(countMoves(s, t, 0));
-  }
-
-  private static int countMoves(String s, String t, int moves) {
-    for (int i = 0; i < s.length(); i++) {
-      int diff = t.charAt(i) - s.charAt(i);
-      if (diff < 0) {
-        diff = 26 + diff;
-      }
-      if (diff >= 13) {
-        moves = moves + 1;
-      }
-      moves = moves + (diff % 13);
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int n = scanner.nextInt();
+        String s = scanner.next();
+        String t = scanner.next();
+        System.out.println(countMoves(s, t, 0));
     }
-    return moves;
-  }
+
+    private static int countMoves(String s, String t, int moves) {
+        for (int i = 0; i < s.length(); i++) {
+            int diff = t.charAt(i) - s.charAt(i);
+            if (diff < 0) {
+                diff = 26 + diff;
+            }
+            if (diff >= 13) {
+                moves = moves + 1;
+            }
+            moves = moves + (diff % 13);
+        }
+        return moves;
+    }
 }

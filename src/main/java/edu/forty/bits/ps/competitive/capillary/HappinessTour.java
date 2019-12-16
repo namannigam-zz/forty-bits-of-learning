@@ -34,31 +34,31 @@ import java.util.Scanner;
  */
 public class HappinessTour {
 
-  public static void main(String[] args) {
+    public static void main(String[] args) {
 
-    Scanner scanner = new Scanner(System.in);
-    int T = scanner.nextInt();
+        Scanner scanner = new Scanner(System.in);
+        int T = scanner.nextInt();
 
-    for (int a = 0; a < T; a++) {
-      int N = scanner.nextInt(); // number of cities
+        for (int a = 0; a < T; a++) {
+            int N = scanner.nextInt(); // number of cities
 
-      int[] Hi = new int[N]; // city happiness
-      for (int b = 0; b < N; b++) {
-        Hi[b] = scanner.nextInt();
-      }
+            int[] Hi = new int[N]; // city happiness
+            for (int b = 0; b < N; b++) {
+                Hi[b] = scanner.nextInt();
+            }
 
-      Map<Integer, List<Integer>> srcToDestinationCity = new HashMap<>();
+            Map<Integer, List<Integer>> srcToDestinationCity = new HashMap<>();
 
-      int M = scanner.nextInt(); // number of roads (N-1)
-      int[] srcCities = new int[M];
-      int[] destCities = new int[M];
+            int M = scanner.nextInt(); // number of roads (N-1)
+            int[] srcCities = new int[M];
+            int[] destCities = new int[M];
 
-      for (int c = 0; c < M; c++) {
-        srcCities[c] = scanner.nextInt();
-      }
-      for (int c = 0; c < M; c++) {
-        destCities[c] = scanner.nextInt();
-      }
+            for (int c = 0; c < M; c++) {
+                srcCities[c] = scanner.nextInt();
+            }
+            for (int c = 0; c < M; c++) {
+                destCities[c] = scanner.nextInt();
+            }
+        }
     }
-  }
 }

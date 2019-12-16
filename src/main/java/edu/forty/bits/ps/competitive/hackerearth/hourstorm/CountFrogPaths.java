@@ -26,20 +26,20 @@ import java.util.Scanner;
  */
 public class CountFrogPaths {
 
-  public static void main(String[] args) {
-    Scanner scanner = new Scanner(System.in);
-    int X = scanner.nextInt();
-    int Y = scanner.nextInt();
-    int S = scanner.nextInt();
-    int T = scanner.nextInt();
-    int count = 0;
-    for (int i = X; i < X + S; i++) {
-      for (int j = Y; j < Y + S; j++) {
-        if ((i + j) <= T) {
-          count++;
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int X = scanner.nextInt();
+        int Y = scanner.nextInt();
+        int S = scanner.nextInt();
+        int T = scanner.nextInt();
+        int count = 0;
+        for (int i = X; i < X + S; i++) {
+            for (int j = Y; j < Y + S; j++) {
+                if ((i + j) <= T) {
+                    count++;
+                }
+            }
         }
-      }
+        System.out.println(count);
     }
-    System.out.println(count);
-  }
 }

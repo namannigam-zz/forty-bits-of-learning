@@ -1,8 +1,6 @@
 package edu.forty.bits.ds.array;
 
 import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.RequiredArgsConstructor;
 
 import java.util.Arrays;
 import java.util.HashSet;
@@ -48,24 +46,6 @@ public class ReSpace {
             index++;
         }
         return new ParseResult(bestInvalid, bestParsing);
-    }
-
-
-    @AllArgsConstructor
-    static class ParseResult {
-        int invalid;
-        String parsed;
-
-        public static ParseResult min(ParseResult r1, ParseResult r2) {
-            if (r1 == null) {
-                return r2;
-            }
-            if (r2 == null) {
-                return r1;
-            }
-
-            return r2.invalid < r1.invalid ? r2 : r1;
-        }
     }
 
     // Commonly, exponential runtime are optimised using memoization.
@@ -118,7 +98,6 @@ public class ReSpace {
         return memo[start];
     }
 
-
     private static String clean(String str) {
         char[] punctuation = {',', '"', '!', '.', '\'', '?', ','};
         for (char c : punctuation) {
@@ -127,12 +106,28 @@ public class ReSpace {
         return str.replace(" ", "").toLowerCase();
     }
 
-
     public static void main(String[] args) {
         HashSet<String> dictionary = new HashSet<>(Arrays.asList("", ""));
         String sentence = "As one of the top companies in the world, Google will surely attract the attention of computer gurus. This does not, however, mean the company is for everyone.";
         sentence = clean(sentence);
         System.out.println(sentence);
         System.out.println(bestSplit(dictionary, sentence));
+    }
+
+    @AllArgsConstructor
+    static class ParseResult {
+        int invalid;
+        String parsed;
+
+        public static ParseResult min(ParseResult r1, ParseResult r2) {
+            if (r1 == null) {
+                return r2;
+            }
+            if (r2 == null) {
+                return r1;
+            }
+
+            return r2.invalid < r1.invalid ? r2 : r1;
+        }
     }
 }

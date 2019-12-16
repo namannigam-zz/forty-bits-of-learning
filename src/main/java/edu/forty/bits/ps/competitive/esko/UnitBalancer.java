@@ -32,121 +32,121 @@ import java.util.stream.IntStream;
  * <p>Constraint 1 <= M <= 10
  */
 public class UnitBalancer {
-  public static void main(String args[]) throws Exception {
+    public static void main(String args[]) throws Exception {
 
-    Scanner scanner = new Scanner(System.in);
-    Set<String> overallUnits = new HashSet<>(Arrays.asList(scanner.nextLine().split(",")));
-    int eqnBound = overallUnits.size() - 1;
+        Scanner scanner = new Scanner(System.in);
+        Set<String> overallUnits = new HashSet<>(Arrays.asList(scanner.nextLine().split(",")));
+        int eqnBound = overallUnits.size() - 1;
 
-    // list of equations
-    Set<Equation> equations =
-        IntStream.range(0, eqnBound)
-            .mapToObj(i -> Arrays.asList(scanner.nextLine().split(" ")))
-            .map(eq -> new Equation(eq.get(0), Integer.parseInt(eq.get(2)), eq.get(3)))
-            .collect(Collectors.toCollection(() -> new HashSet<>(eqnBound)));
+        // list of equations
+        Set<Equation> equations =
+                IntStream.range(0, eqnBound)
+                        .mapToObj(i -> Arrays.asList(scanner.nextLine().split(" ")))
+                        .map(eq -> new Equation(eq.get(0), Integer.parseInt(eq.get(2)), eq.get(3)))
+                        .collect(Collectors.toCollection(() -> new HashSet<>(eqnBound)));
 
-    Set<Equation> resolvedEquations = resovleEquationsForMultipleSimilarKeys(equations);
+        Set<Equation> resolvedEquations = resovleEquationsForMultipleSimilarKeys(equations);
 
-    // create a finalUnit to Equation mapping
-    Map<String, Equation> finalUnitToEquaionMapping =
-        resolvedEquations.stream()
-            .collect(Collectors.toMap(Equation::getFinalUnit, eq -> eq, (a, b) -> b));
+        // create a finalUnit to Equation mapping
+        Map<String, Equation> finalUnitToEquaionMapping =
+                resolvedEquations.stream()
+                        .collect(Collectors.toMap(Equation::getFinalUnit, eq -> eq, (a, b) -> b));
 
-    String iterationUnit = findMaxUnit(overallUnits, equations); // to start iterating downwards
+        String iterationUnit = findMaxUnit(overallUnits, equations); // to start iterating downwards
 
-    long multiplier = 1;
-    StringBuilder finalRepresentation = new StringBuilder();
+        long multiplier = 1;
+        StringBuilder finalRepresentation = new StringBuilder();
 
-    while (true) {
-      finalRepresentation.append(multiplier).append(iterationUnit).append(" = ");
-      Equation currentEquation = finalUnitToEquaionMapping.get(iterationUnit);
-      if (currentEquation == null) break; // no mapping of minUnit
-      multiplier = multiplier * currentEquation.getMultiplier();
-      iterationUnit = currentEquation.getInitialUnit();
-    }
-    System.out.println(finalRepresentation.substring(0, finalRepresentation.length() - 3));
-  }
-
-  // find the max unit to represented as unity
-  private static String findMaxUnit(Set<String> overallUnits, Set<Equation> equations) {
-    Set<String> initialUnits = initialUnits(equations);
-    overallUnits.removeAll(initialUnits);
-    return overallUnits.iterator().next();
-  }
-
-  private static Set<String> finalUnits(Set<Equation> equations) {
-    return equations.stream().map(Equation::getFinalUnit).collect(Collectors.toSet());
-  }
-
-  private static Set<String> initialUnits(Set<Equation> equations) {
-    return equations.stream().map(Equation::getInitialUnit).collect(Collectors.toSet());
-  }
-
-  private static Set<Equation> resovleEquationsForMultipleSimilarKeys(
-      Set<Equation> initialEquation) {
-    Map<String, List<Equation>> eqMappings = new HashMap<>();
-    for (Equation equation : initialEquation) {
-      if (eqMappings.containsKey(equation.getFinalUnit())) {
-        List<Equation> updatedEquations = eqMappings.get(equation.getFinalUnit());
-        updatedEquations.add(equation);
-        eqMappings.put(equation.getFinalUnit(), updatedEquations);
-      } else {
-        List<Equation> equationList = new ArrayList<>();
-        equationList.add(equation);
-        eqMappings.put(equation.getFinalUnit(), equationList);
-      }
+        while (true) {
+            finalRepresentation.append(multiplier).append(iterationUnit).append(" = ");
+            Equation currentEquation = finalUnitToEquaionMapping.get(iterationUnit);
+            if (currentEquation == null) break; // no mapping of minUnit
+            multiplier = multiplier * currentEquation.getMultiplier();
+            iterationUnit = currentEquation.getInitialUnit();
+        }
+        System.out.println(finalRepresentation.substring(0, finalRepresentation.length() - 3));
     }
 
-    eqMappings.forEach(
-        (key, value) -> {
-          value.sort(Comparator.comparingInt(Equation::getMultiplier));
-          eqMappings.put(key, value);
-        });
-
-    Set<Equation> finalEquations = new HashSet<>();
-
-    eqMappings.forEach(
-        (key, value) -> {
-          Equation firstEq = value.get(0);
-          finalEquations.add(firstEq);
-          String finalUnit = firstEq.getInitialUnit();
-          int initMul = firstEq.getMultiplier();
-          for (int i = 1; i < value.size(); i++) {
-            Equation currentEq = value.get(i);
-            finalEquations.add(
-                new Equation(
-                    finalUnit, currentEq.getMultiplier() / initMul, currentEq.getInitialUnit()));
-            initMul = currentEq.getMultiplier();
-            finalUnit = currentEq.getInitialUnit();
-          }
-        });
-    return finalEquations;
-  }
-
-  // package private attributes and scope
-  private static class Equation {
-    String finalUnit;
-    int multiplier;
-    String initialUnit;
-
-    Equation(String finalUnit, int multiplier, String initialUnit) {
-      this.finalUnit = finalUnit;
-      this.multiplier = multiplier;
-      this.initialUnit = initialUnit;
+    // find the max unit to represented as unity
+    private static String findMaxUnit(Set<String> overallUnits, Set<Equation> equations) {
+        Set<String> initialUnits = initialUnits(equations);
+        overallUnits.removeAll(initialUnits);
+        return overallUnits.iterator().next();
     }
 
-    String getFinalUnit() {
-      return finalUnit;
+    private static Set<String> finalUnits(Set<Equation> equations) {
+        return equations.stream().map(Equation::getFinalUnit).collect(Collectors.toSet());
     }
 
-    int getMultiplier() {
-      return multiplier;
+    private static Set<String> initialUnits(Set<Equation> equations) {
+        return equations.stream().map(Equation::getInitialUnit).collect(Collectors.toSet());
     }
 
-    String getInitialUnit() {
-      return initialUnit;
+    private static Set<Equation> resovleEquationsForMultipleSimilarKeys(
+            Set<Equation> initialEquation) {
+        Map<String, List<Equation>> eqMappings = new HashMap<>();
+        for (Equation equation : initialEquation) {
+            if (eqMappings.containsKey(equation.getFinalUnit())) {
+                List<Equation> updatedEquations = eqMappings.get(equation.getFinalUnit());
+                updatedEquations.add(equation);
+                eqMappings.put(equation.getFinalUnit(), updatedEquations);
+            } else {
+                List<Equation> equationList = new ArrayList<>();
+                equationList.add(equation);
+                eqMappings.put(equation.getFinalUnit(), equationList);
+            }
+        }
+
+        eqMappings.forEach(
+                (key, value) -> {
+                    value.sort(Comparator.comparingInt(Equation::getMultiplier));
+                    eqMappings.put(key, value);
+                });
+
+        Set<Equation> finalEquations = new HashSet<>();
+
+        eqMappings.forEach(
+                (key, value) -> {
+                    Equation firstEq = value.get(0);
+                    finalEquations.add(firstEq);
+                    String finalUnit = firstEq.getInitialUnit();
+                    int initMul = firstEq.getMultiplier();
+                    for (int i = 1; i < value.size(); i++) {
+                        Equation currentEq = value.get(i);
+                        finalEquations.add(
+                                new Equation(
+                                        finalUnit, currentEq.getMultiplier() / initMul, currentEq.getInitialUnit()));
+                        initMul = currentEq.getMultiplier();
+                        finalUnit = currentEq.getInitialUnit();
+                    }
+                });
+        return finalEquations;
     }
-  }
+
+    // package private attributes and scope
+    private static class Equation {
+        String finalUnit;
+        int multiplier;
+        String initialUnit;
+
+        Equation(String finalUnit, int multiplier, String initialUnit) {
+            this.finalUnit = finalUnit;
+            this.multiplier = multiplier;
+            this.initialUnit = initialUnit;
+        }
+
+        String getFinalUnit() {
+            return finalUnit;
+        }
+
+        int getMultiplier() {
+            return multiplier;
+        }
+
+        String getInitialUnit() {
+            return initialUnit;
+        }
+    }
 }
 
 // day,hour,second,minute

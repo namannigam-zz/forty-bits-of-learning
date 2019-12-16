@@ -41,14 +41,14 @@ import java.util.stream.LongStream;
  */
 public class PikachuAndTeamRocket {
 
-  public static void main(String[] args) {
-    Scanner scanner = new Scanner(System.in);
-    int n = scanner.nextInt();
-    int k = scanner.nextInt();
-    long arr[] = LongStream.range(0, n).map(i -> scanner.nextLong()).toArray();
-    LongStream.range(0, k)
-        .mapToObj(i -> IntStream.range(1, arr.length))
-        .flatMapToInt(Function.identity())
-        .forEach(j -> arr[j] = arr[j - 1] | arr[j]);
-  }
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int n = scanner.nextInt();
+        int k = scanner.nextInt();
+        long arr[] = LongStream.range(0, n).map(i -> scanner.nextLong()).toArray();
+        LongStream.range(0, k)
+                .mapToObj(i -> IntStream.range(1, arr.length))
+                .flatMapToInt(Function.identity())
+                .forEach(j -> arr[j] = arr[j - 1] | arr[j]);
+    }
 }

@@ -15,15 +15,6 @@ import java.util.stream.IntStream;
  */
 public class WordTransformer {
 
-    // Brute force might be to get all the words that are one edit away and then selecting
-    // each of them in present in the dictionary to call the method again recursively. Note: This would
-    // involve marking the strings already seen as visited.
-    // This approach resembles DFS, once can think of performing a BFS.
-    List<String> transform(String source, String destination, Set<String> dictionary) {
-        Set<String> visited = new HashSet<>();
-        return transform(visited, source, destination, dictionary);
-    }
-
     private static List<String> transform(Set<String> visited, String startWord, String stopWord, Set<String> dictionary) {
         if (startWord.equals(stopWord)) {
             LinkedList<String> path = new LinkedList<>();
@@ -57,15 +48,15 @@ public class WordTransformer {
         return words;
     }
 
-    // Using a Trie representation can help traverse to only those words present in the dictionary
-    // Grouping words in dictionary, based on the prefix and suffix could provide all the valid one edit away words
-
     /* find path to transform startWord into endWord. */
     public static List<String> transform(String start, String stop, String[] words) {
         Map<String, List<String>> wildcardToWordList = createWildcardToWordMap(words);
         Set<String> visited = new HashSet<>();
         return transform(visited, start, stop, wildcardToWordList);
     }
+
+    // Using a Trie representation can help traverse to only those words present in the dictionary
+    // Grouping words in dictionary, based on the prefix and suffix could provide all the valid one edit away words
 
     /* Do a depth-first search from start to stop, traveling through each word that is one edit away. */
     public static List<String> transform(Set<String> visited, String start, String stop, Map<String, List<String>> wildcardToWordList) {
@@ -120,46 +111,6 @@ public class WordTransformer {
         return linkedWords;
     }
 
-    // Remember Bidirectional Search in Graphs? (optimised)
-    // Traversing both the source and destination strings would reduce the runtime from O(k^d) to O(k^d/2)
-
-    @Getter
-    @AllArgsConstructor
-    static class PathNode {
-        private String word;
-        private PathNode previousNode;
-
-        /* Traverse path and return linked list of nodes. */
-        List<String> collapse(boolean startsWithRoot) {
-            LinkedList<String> path = new LinkedList<>();
-            PathNode node = this;
-            while (node != null) {
-                if (startsWithRoot) {
-                    path.addLast(node.word);
-                } else {
-                    path.addFirst(node.word);
-                }
-                node = node.previousNode;
-            }
-            return path;
-        }
-    }
-
-    static class BFSData {
-        Queue<PathNode> toVisit = new LinkedList<>();
-        Map<String, PathNode> visited = new HashMap<>();
-
-        BFSData(String root) {
-            PathNode sourcePath = new PathNode(root, null);
-            toVisit.add(sourcePath);
-            visited.put(root, sourcePath);
-        }
-
-        boolean isFinished() {
-            return toVisit.isEmpty();
-        }
-    }
-
     public static List<String> transformBidirectionally(String startWord, String stopWord, String[] words) {
         Map<String, List<String>> wildcardToWordList = createWildcardToWordMap(words);
 
@@ -182,6 +133,9 @@ public class WordTransformer {
 
         return null;
     }
+
+    // Remember Bidirectional Search in Graphs? (optimised)
+    // Traversing both the source and destination strings would reduce the runtime from O(k^d) to O(k^d/2)
 
     /* Search one level and return collision, if any. */
     private static String searchLevel(Map<String, List<String>> wildcardToWordList, BFSData primary, BFSData secondary) {
@@ -229,6 +183,52 @@ public class WordTransformer {
             System.out.println("No path.");
         } else {
             System.out.println(list.toString());
+        }
+    }
+
+    // Brute force might be to get all the words that are one edit away and then selecting
+    // each of them in present in the dictionary to call the method again recursively. Note: This would
+    // involve marking the strings already seen as visited.
+    // This approach resembles DFS, once can think of performing a BFS.
+    List<String> transform(String source, String destination, Set<String> dictionary) {
+        Set<String> visited = new HashSet<>();
+        return transform(visited, source, destination, dictionary);
+    }
+
+    @Getter
+    @AllArgsConstructor
+    static class PathNode {
+        private String word;
+        private PathNode previousNode;
+
+        /* Traverse path and return linked list of nodes. */
+        List<String> collapse(boolean startsWithRoot) {
+            LinkedList<String> path = new LinkedList<>();
+            PathNode node = this;
+            while (node != null) {
+                if (startsWithRoot) {
+                    path.addLast(node.word);
+                } else {
+                    path.addFirst(node.word);
+                }
+                node = node.previousNode;
+            }
+            return path;
+        }
+    }
+
+    static class BFSData {
+        Queue<PathNode> toVisit = new LinkedList<>();
+        Map<String, PathNode> visited = new HashMap<>();
+
+        BFSData(String root) {
+            PathNode sourcePath = new PathNode(root, null);
+            toVisit.add(sourcePath);
+            visited.put(root, sourcePath);
+        }
+
+        boolean isFinished() {
+            return toVisit.isEmpty();
         }
     }
 }

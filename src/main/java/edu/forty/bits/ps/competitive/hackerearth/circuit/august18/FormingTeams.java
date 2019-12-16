@@ -46,31 +46,31 @@ import java.util.stream.IntStream;
  */
 public class FormingTeams {
 
-  public static void main(String[] args) {
-    Scanner scanner = new Scanner(System.in);
-    int T = scanner.nextInt();
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int T = scanner.nextInt();
 
-    for (int i = 0; i < T; i++) {
-      int N = scanner.nextInt();
-      int K = scanner.nextInt();
-      List<Integer> ranks =
-          IntStream.range(0, N)
-              .mapToObj(j -> scanner.nextInt())
-              .collect(Collectors.toCollection(() -> new ArrayList<>(N)));
-      List<Edge> edges =
-          IntStream.range(0, N - 1)
-              .mapToObj(j -> new Edge(scanner.nextInt(), scanner.nextInt()))
-              .collect(Collectors.toList());
+        for (int i = 0; i < T; i++) {
+            int N = scanner.nextInt();
+            int K = scanner.nextInt();
+            List<Integer> ranks =
+                    IntStream.range(0, N)
+                            .mapToObj(j -> scanner.nextInt())
+                            .collect(Collectors.toCollection(() -> new ArrayList<>(N)));
+            List<Edge> edges =
+                    IntStream.range(0, N - 1)
+                            .mapToObj(j -> new Edge(scanner.nextInt(), scanner.nextInt()))
+                            .collect(Collectors.toList());
+        }
     }
-  }
 
-  private static class Edge {
-    int superior;
-    int employee;
+    private static class Edge {
+        int superior;
+        int employee;
 
-    Edge(int u, int v) {
-      this.superior = u;
-      this.employee = v;
+        Edge(int u, int v) {
+            this.superior = u;
+            this.employee = v;
+        }
     }
-  }
 }

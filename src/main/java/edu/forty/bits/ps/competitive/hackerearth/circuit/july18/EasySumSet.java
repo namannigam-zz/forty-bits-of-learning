@@ -27,28 +27,28 @@ import java.util.stream.IntStream;
  */
 public class EasySumSet {
 
-  public static void main(String[] args) {
-    Scanner scanner = new Scanner(System.in);
-    int N = scanner.nextInt();
-    List<Integer> A =
-        IntStream.range(0, N)
-            .mapToObj(i -> scanner.nextInt())
-            .sorted()
-            .collect(Collectors.toCollection(() -> new ArrayList<>(N)));
-    int M = scanner.nextInt();
-    List<Integer> C =
-        IntStream.range(0, M)
-            .mapToObj(i -> scanner.nextInt())
-            .sorted()
-            .collect(Collectors.toCollection(() -> new ArrayList<>(M)));
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int N = scanner.nextInt();
+        List<Integer> A =
+                IntStream.range(0, N)
+                        .mapToObj(i -> scanner.nextInt())
+                        .sorted()
+                        .collect(Collectors.toCollection(() -> new ArrayList<>(N)));
+        int M = scanner.nextInt();
+        List<Integer> C =
+                IntStream.range(0, M)
+                        .mapToObj(i -> scanner.nextInt())
+                        .sorted()
+                        .collect(Collectors.toCollection(() -> new ArrayList<>(M)));
 
-    int min = C.get(0) - A.get(0);
-    int max = C.get(C.size() - 1) - A.get(A.size() - 1);
-    List<Integer> B = new ArrayList<>();
-    IntStream.rangeClosed(min, max)
-        .forEach(
-            i ->
-                A.stream().filter(a -> C.contains(i + a) && !B.contains(i)).forEach(a -> B.add(i)));
-    B.stream().map(b -> b + " ").forEach(System.out::print);
-  }
+        int min = C.get(0) - A.get(0);
+        int max = C.get(C.size() - 1) - A.get(A.size() - 1);
+        List<Integer> B = new ArrayList<>();
+        IntStream.rangeClosed(min, max)
+                .forEach(
+                        i ->
+                                A.stream().filter(a -> C.contains(i + a) && !B.contains(i)).forEach(a -> B.add(i)));
+        B.stream().map(b -> b + " ").forEach(System.out::print);
+    }
 }

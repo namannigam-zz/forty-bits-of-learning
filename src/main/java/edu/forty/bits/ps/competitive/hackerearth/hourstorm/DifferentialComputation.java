@@ -26,84 +26,84 @@ import java.util.Scanner;
  */
 public class DifferentialComputation {
 
-  public static void main(String[] args) {
-    Scanner scanner = new Scanner(System.in);
-    int N = scanner.nextInt();
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int N = scanner.nextInt();
 
-    long arr[] = new long[N];
-    for (int i = 0; i < N; i++) {
-      arr[i] = scanner.nextLong();
-    }
-
-    System.out.println(printResult(arr));
-  }
-
-  private static long xor(List<Long> integers) {
-    long acc = 0;
-    for (Long i : integers) {
-      acc = acc ^ i;
-    }
-    return acc;
-  }
-
-  private static long printResult(long set[]) {
-    int n = set.length;
-    long M = 998244353;
-    long sum = 0;
-    for (int i = 0; i < (1 << n); i++) {
-      List<Long> list = new ArrayList<>();
-      // Print current subset
-      for (int j = 0; j < n; j++) {
-        if ((i & (1 << j)) > 0) {
-          list.add(set[j]);
+        long arr[] = new long[N];
+        for (int i = 0; i < N; i++) {
+            arr[i] = scanner.nextLong();
         }
-      }
-      sum = (sum + xor(list) * list.size()) % M;
+
+        System.out.println(printResult(arr));
     }
-    return sum;
-  }
 
-  // =====================================================SOLUTION
-  // COPIED==========================================//
-
-  private static long pow(long a, long n, long mod) {
-    // a %= mod;
-    long ret = 1;
-    int x = 63 - Long.numberOfLeadingZeros(n);
-    for (; x >= 0; x--) {
-      ret = ret * ret % mod;
-      if (n << 63 - x < 0) {
-        ret = ret * a % mod;
-      }
+    private static long xor(List<Long> integers) {
+        long acc = 0;
+        for (Long i : integers) {
+            acc = acc ^ i;
+        }
+        return acc;
     }
-    return ret;
-  }
 
-  void solve() {
-    Scanner scanner = new Scanner(System.in);
-    int mod = 998244353;
-    int n = scanner.nextInt();
-    long[] a = new long[n];
-    for (int i = 0; i < n; i++) a[i] = scanner.nextLong();
-    long ans = 0;
-    for (int d = 60; d >= 0; d--) {
-      int o = 0;
-      for (int i = 0; i < n; i++) {
-        if (a[i] << ~d < 0) o++;
-      }
-
-      // [0,n-o]
-      // 2^(n-o-1)*(n-o)*2^(o-1)
-      // 1*C(o,1)+3*C(o,3)+..
-      // 0 1 2 6 16 40
-      ans *= 2;
-      if (o >= 1) {
-        long g = o == 1 ? 1 : (long) o * pow(2, o - 2, mod) % mod;
-        ans += g * pow(2, n - o, mod);
-        ans += pow(2, n - 2, mod) * (n - o);
-      }
-      ans %= mod;
+    private static long printResult(long set[]) {
+        int n = set.length;
+        long M = 998244353;
+        long sum = 0;
+        for (int i = 0; i < (1 << n); i++) {
+            List<Long> list = new ArrayList<>();
+            // Print current subset
+            for (int j = 0; j < n; j++) {
+                if ((i & (1 << j)) > 0) {
+                    list.add(set[j]);
+                }
+            }
+            sum = (sum + xor(list) * list.size()) % M;
+        }
+        return sum;
     }
-    System.out.println(ans);
-  }
+
+    // =====================================================SOLUTION
+    // COPIED==========================================//
+
+    private static long pow(long a, long n, long mod) {
+        // a %= mod;
+        long ret = 1;
+        int x = 63 - Long.numberOfLeadingZeros(n);
+        for (; x >= 0; x--) {
+            ret = ret * ret % mod;
+            if (n << 63 - x < 0) {
+                ret = ret * a % mod;
+            }
+        }
+        return ret;
+    }
+
+    void solve() {
+        Scanner scanner = new Scanner(System.in);
+        int mod = 998244353;
+        int n = scanner.nextInt();
+        long[] a = new long[n];
+        for (int i = 0; i < n; i++) a[i] = scanner.nextLong();
+        long ans = 0;
+        for (int d = 60; d >= 0; d--) {
+            int o = 0;
+            for (int i = 0; i < n; i++) {
+                if (a[i] << ~d < 0) o++;
+            }
+
+            // [0,n-o]
+            // 2^(n-o-1)*(n-o)*2^(o-1)
+            // 1*C(o,1)+3*C(o,3)+..
+            // 0 1 2 6 16 40
+            ans *= 2;
+            if (o >= 1) {
+                long g = o == 1 ? 1 : (long) o * pow(2, o - 2, mod) % mod;
+                ans += g * pow(2, n - o, mod);
+                ans += pow(2, n - 2, mod) * (n - o);
+            }
+            ans %= mod;
+        }
+        System.out.println(ans);
+    }
 }
