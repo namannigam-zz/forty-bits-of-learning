@@ -1,9 +1,15 @@
 package edu.forty.bits.ds.linkedlist;
 
-// determine is two linked lists are intersecting
+import lombok.AllArgsConstructor;
 
-public class IntersectingLists {
+/**
+ * Given two linked lists, determine if the two lists intersect. Return the intersecting node.
+ * Note that the intersection is defined based on the reference and not the value. That is if the kth
+ * node of one list is exact same as jth node of another. They are then intersecting.
+ */
+public class Intersection {
 
+    // to return the node of intersection, one would have to traverse both the lists
     LinkedListNode intersectingLinkedLists(LinkedListNode first, LinkedListNode second) {
         if (first == null || second == null) {
             return null;
@@ -19,7 +25,7 @@ public class IntersectingLists {
         LinkedListNode shorter = result1.size < result2.size ? first : second;
         LinkedListNode longer = result1.size < result2.size ? second : first;
 
-        // advance the pointer for longer list by the difference in size
+        // advance the pointer for longer list by the difference in size starting from the tail
         longer = KthFromLastNode.getKthNode(longer, Math.abs(result1.size - result2.size));
 
         // move both the pointers until collision
@@ -43,14 +49,9 @@ public class IntersectingLists {
         return new Result(current, size);
     }
 
-    class Result {
-
+    @AllArgsConstructor
+    static class Result {
         LinkedListNode tail;
         int size;
-
-        Result(LinkedListNode tail, int size) {
-            this.tail = tail;
-            this.size = size;
-        }
     }
 }

@@ -1,7 +1,9 @@
 package edu.forty.bits.ds.linkedlist;
 
-// detect a loop in the linked list
-// (follow up with removing the loop)
+/**
+ * Given a circular linked list, implement and algorithm that returns the node at the beginning of the loop.
+ * (follow up with removing the loop)
+ */
 public class LoopDetection {
 
     // approach of runner and slower pointers works here

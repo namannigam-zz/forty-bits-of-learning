@@ -1,8 +1,11 @@
 package edu.forty.bits.ds.linkedlist;
 
-// partition a linked list given a value x such that all smaller comes on one side and greater on
-// another
-// (if x is a part of list it can appear in the right partition anywhere)
+/**
+ * Write code tto partition a linked list around a value x, such that all nodes less than x comes
+ * before all the nodes greater than or equal to x. If x is contained within the list,
+ * the values of x only need to be after the elements less than x. The partition element x,
+ * is a part of list it can appear in the right partition anywhere)
+ */
 public class PartitionLinkedList {
 
     // one way is to keep a track of before and after partition values with start and end pointers
@@ -42,9 +45,9 @@ public class PartitionLinkedList {
             return afterStart;
         }
 
-        // link the tqo partitions
+        // link the two partitions
         beforeEnd.next = afterStart;
-        return beforeStart;
+        return beforeStart; // return the reference of the start of the chain
     }
 
     // you can still optimise the use of variables for tracking the lists

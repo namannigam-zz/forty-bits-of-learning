@@ -1,11 +1,14 @@
 package edu.forty.bits.ds.linkedlist;
 
-import java.util.Stack;
+import java.util.ArrayDeque;
+import java.util.Deque;
 
+/**
+ * Implement a function to check if a linked list is a palindrome.
+ */
 public class IsPalindrome {
 
-    // one approach is to reverse the linked list and match if all the elements are same in both the
-    // list
+    // one approach is to reverse the linked list and match if all the elements are same in both the list
     boolean checkPalindrome(LinkedListNode linkedListNode) {
         LinkedListNode reverse = ReverseLinkedList.reverseLinkedListAndClone(linkedListNode);
         return isEqual(linkedListNode, reverse);
@@ -22,16 +25,14 @@ public class IsPalindrome {
         return first == null && second == null;
     }
 
-    // one needs to traverse only until the middle element and comparing the fold with the existing
-    // elements
+    // One needs to traverse only until the middle element and comparing the fold with the existing elements
     // so a Stack could be used to push the first half of elements and then pop the elements to
-    // compare them
-    // (this would require being aware fof the size or using the runner approach to decide the middle
-    // element)
+    // compare them with the other half. This would require being aware fof the size or
+    // using the runner approach to decide the middle element)
     boolean isPalindrome(LinkedListNode head) {
         LinkedListNode fast = head;
         LinkedListNode slow = head;
-        Stack<Integer> stack = new Stack<>();
+        Deque<Integer> stack = new ArrayDeque<>(); // Java implementation for synchronised stack
         while (fast != null && fast.next != null) {
             stack.push(slow.data);
             slow = slow.next;
