@@ -1,8 +1,5 @@
 package edu.forty.bits.datastructures.tree;
 
-/**
- * Created by naman.nigam on 02/12/15.
- */
 public class BSTWordSearch<E> {
     // root passed from method call for a node
     public boolean findWord(String word, String root) {

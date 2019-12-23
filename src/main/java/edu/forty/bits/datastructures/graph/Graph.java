@@ -6,4 +6,10 @@ public class Graph {
     public GraphNode[] getNodes() {
         return nodes;
     }
+
+    static class GraphNode {
+        int data;
+        State state;
+        GraphNode[] adjacents;
+    }
 }

@@ -1,15 +1,14 @@
 package edu.forty.bits.datastructures.tree;
 
-/**
- * Created by naman.nigam on 08/02/16.
- */
+
 public class TreeNode {
-    public TreeNode left, right;
+    public TreeNode left;
+    public TreeNode right;
     public TreeNode parent;
     int data;
 
-    public TreeNode(int x) {
-        data = x;
+    public TreeNode(int data) {
+        this.data = data;
         left = right = null;
     }
 
