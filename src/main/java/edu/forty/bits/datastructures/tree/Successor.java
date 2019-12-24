@@ -1,7 +1,9 @@
 package edu.forty.bits.datastructures.tree;
 
-// next element is supposedly the in-order successor of an element
-// given the parent is provided for each node
+/**
+ * Write an algorithm to find the "next" node (in-order successor) of a given node in a binary
+ * search tree. You may assume that each node has a link to its parent.
+ */
 public class Successor {
 
     TreeNode inOrderSuccessor(TreeNode node) {
@@ -11,8 +13,7 @@ public class Successor {
         } else {
             TreeNode q = node;
             TreeNode x = q.parent;
-            // check if the current node is not the left node of the parent, go up in the hierarchy
-            // referentially
+            // check if the current node is not the left node of the parent, go up in the hierarchy referentially
             while (x != null && x.left != q) {
                 q = x;
                 x = x.parent;

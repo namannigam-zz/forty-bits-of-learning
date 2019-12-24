@@ -1,10 +1,14 @@
 package edu.forty.bits.datastructures.tree;
 
-// This operation is on sorted data
+/**
+ * Given a sorted (increasing order) array with unique integer elements, write an algorithm to create a binary
+ * search tree with minimal height.
+ */
 public class MinimalBinaryTree {
 
-    // we can recursively call the creation pivoting the data around the mid element
-    TreeNode createMinimalBST(int array[]) {
+    // This operation is on sorted data.
+    // We can recursively call the creation, pivoting the data around the mid element.
+    private TreeNode createMinimalBST(int[] array) {
         return createMinimalBST(array, 0, array.length - 1);
     }
 

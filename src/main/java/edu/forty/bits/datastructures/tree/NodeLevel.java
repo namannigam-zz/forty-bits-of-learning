@@ -1,8 +1,5 @@
 package edu.forty.bits.datastructures.tree;
 
-/**
- * Created by naman.nigam on 08/02/16.
- */
 public class NodeLevel {
 
     public static int getLevelUtil(TreeNode node, int data, int level) {

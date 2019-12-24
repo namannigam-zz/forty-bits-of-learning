@@ -14,7 +14,7 @@ public class RouteBetweenNodes {
         if (start == end) {
             return true;
         }
-        LinkedList<Graph.GraphNode> list = new LinkedList<>(); // for queuing capability
+        var list = new LinkedList<Graph.GraphNode>(); // for queuing capability
 
         for (Graph.GraphNode gn : graph.getNodes()) {
             gn.state = State.UNVISITED;

@@ -1,10 +1,12 @@
 package edu.forty.bits.datastructures.graph;
 
 import java.util.*;
-
-// given a list of projects and a list of pair of dependencies, determine the build order of the
-// projects
-// or return error if not possible
+/**
+ * You are given a list of projects and a list of pair of dependencies
+ * (second project is a dependent on the first project). All of the project dependencies must be built before
+ * the project is. Find a build order that will allow the projects to be build, if there is no valid build order,
+ * return the error.
+ */
 public class BuildOrder {
 
     // first approach towards this would be that we represent the projects as a graph node
