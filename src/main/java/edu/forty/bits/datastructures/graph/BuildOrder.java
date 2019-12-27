@@ -1,6 +1,9 @@
 package edu.forty.bits.datastructures.graph;
 
+import lombok.Getter;
+
 import java.util.*;
+
 /**
  * You are given a list of projects and a list of pair of dependencies
  * (second project is a dependent on the first project). All of the project dependencies must be built before
@@ -11,9 +14,7 @@ public class BuildOrder {
 
     // first approach towards this would be that we represent the projects as a graph node
     // and draw the dependencies between them with edges going from independent project to dependent
-    // project
-    // so the edge A -> B means B depends on A to be build first
-
+    // project so the edge A -> B means B depends on A to be build first
     // the exact method to find the build order
     Project[] findBuildOrder(String[] projects, String[][] dependencies) {
         Graph graph = buildGraph(projects, dependencies);
@@ -60,13 +61,13 @@ public class BuildOrder {
         Graph graph = new Graph();
         Arrays.stream(projects).forEach(graph::getOrCreateNode); // create all nodes
         Arrays.stream(dependencies)
-                .forEach(
-                        dependency ->
-                                graph.addEdge(dependency[0], dependency[1])); // create the dependencies and map
+                .forEach(dependency ->
+                        graph.addEdge(dependency[0], dependency[1])); // create the dependencies and map
         return graph;
     }
 
-    class Project {
+    @Getter
+    static class Project {
         List<Project> children = new ArrayList<>(); // dependent projects for this node
         Map<String, Project> map = new HashMap<>();
         private String name;
@@ -74,18 +75,6 @@ public class BuildOrder {
 
         Project(String name) {
             this.name = name;
-        }
-
-        public String getName() {
-            return name;
-        }
-
-        List<Project> getChildren() {
-            return children;
-        }
-
-        int getDependencies() {
-            return dependencies;
         }
 
         void addNeighbour(Project node) {
@@ -105,21 +94,15 @@ public class BuildOrder {
         }
     }
 
-    class Graph {
+    @Getter
+    static class Graph {
         List<Project> nodes = new ArrayList<>();
         Map<String, Project> map = new HashMap<>();
 
         Project getOrCreateNode(String name) {
-            if (!map.containsKey(name)) {
-                Project project = new Project(name);
-                nodes.add(project);
-                map.put(name, project);
-            }
-            return map.get(name);
-        }
-
-        public List<Project> getNodes() {
-            return nodes;
+            Project project = new Project(name);
+            nodes.add(project);
+            return map.computeIfAbsent(name, Project::new); // replacing the conditional check for contains
         }
 
         void addEdge(String startName, String endName) {

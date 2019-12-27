@@ -2,9 +2,7 @@ package edu.forty.bits.datastructures.tree;
 
 import java.util.Stack;
 
-/**
- * Created by naman.nigam on 08/02/16.
- */
+
 public class LeafOrderTraversal {
     // Returns true of leaf traversal of two trees is
     // same, else false
