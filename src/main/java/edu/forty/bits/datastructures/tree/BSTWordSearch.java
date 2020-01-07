@@ -1,5 +1,7 @@
 package edu.forty.bits.datastructures.tree;
 
+import lombok.Getter;
+
 public class BSTWordSearch<E> {
     // root passed from method call for a node
     public boolean findWord(String word, String root) {
@@ -28,4 +30,11 @@ public class BSTWordSearch<E> {
         return true;
     }
     // Would return false, it what you are looking for is nowhere in the BST
+
+    @Getter
+    public class BSTNode<E> {
+        private String info;
+        private BSTNode<E> left;
+        private BSTNode<E> right;
+    }
 }

@@ -1,8 +1,7 @@
 package edu.forty.bits.datastructures.tree;
 
-/**
- * Created by naman.nigam on 30/11/15.
- */
+import lombok.Getter;
+
 public class TreePrefix {
 
     private boolean recContainsPrefix(String prefixKey, BSTNode<String> tree) {
@@ -22,5 +21,12 @@ public class TreePrefix {
         else {
             return true;
         }
+    }
+
+    @Getter
+    public class BSTNode<E> {
+        private String info;
+        private BSTNode<E> left;
+        private BSTNode<E> right;
     }
 }

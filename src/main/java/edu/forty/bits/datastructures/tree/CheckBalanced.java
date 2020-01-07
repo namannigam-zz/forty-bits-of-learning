@@ -41,8 +41,7 @@ public class CheckBalanced {
     }
 
     // then consume it as, this reduces the runtime to O(N), given that the extra space occupied is
-    // O(H),
-    // where H is the height of the tree
+    // O(H), where H is the height of the tree
     boolean isBalancedJustWithHeight(TreeNode treeNode) {
         return checkHeight(treeNode) != Integer.MIN_VALUE;
     }

@@ -8,7 +8,7 @@ import java.util.Map;
  * Design an algorithm to count the number of paths that sum to a given value, The path does not need to start or end
  * at the root or a leaf, but it must go downwards(travelling only from parent nodes to child nodes).
  */
-public class PairWithSum {
+public class PathsWithSum {
 
     // Brute force approach is to find all the paths in the tree and check if there sum is same as the given value
     // this would require a runtime of O(N log(N)) for N nodes performing a traversal of O(logN) nodes further.
