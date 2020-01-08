@@ -1,5 +1,7 @@
 package edu.forty.bits.datastructures.linkedlist;
 
+import edu.forty.bits.datastructures.annotations.LinkedList;
+import edu.forty.bits.datastructures.annotations.Tree;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
@@ -10,6 +12,8 @@ import lombok.Getter;
  * into a doubly linked list. The values should be kept in the order and the operation should be performed
  * in place(on original data structure).
  */
+@Tree
+@LinkedList
 public class BiNodeTransformation {
 
     @Getter
@@ -90,7 +94,7 @@ public class BiNodeTransformation {
     }
 
     // To ease the tail and head relation, we can use circular linked list representation and
-    // reduce the traversal to only oce for each node. That would give us a O(N) order complexity
+    // reduce the traversal to only one for each node. That would give us a O(N) order complexity
 
     public static BiNode convertToCircular(BiNode root) {
         if (root == null) {

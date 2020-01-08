@@ -1,5 +1,6 @@
 package edu.forty.bits.datastructures.array;
 
+import edu.forty.bits.datastructures.annotations.Array;
 import lombok.AllArgsConstructor;
 
 import java.util.Arrays;
@@ -14,6 +15,7 @@ import java.util.Set;
  * (a string), design an algorithm to un-concatenate the document ina way that minimises the number of
  * unrecognised characters.
  */
+@Array
 public class ReSpace {
 
     // The first step would be to find the character in order to place the first space,
