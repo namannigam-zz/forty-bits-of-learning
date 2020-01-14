@@ -1,5 +1,8 @@
 package edu.forty.bits.datastructures.array;
 
+import edu.forty.bits.datastructures.annotations.Array;
+import edu.forty.bits.datastructures.annotations.Graph;
+import edu.forty.bits.datastructures.annotations.Tree;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
@@ -13,6 +16,9 @@ import java.util.stream.IntStream;
  * one word into another word by changing only letter at a time.
  * The new word you get in each step must be in dictionary.
  */
+@Array
+@Tree
+@Graph
 public class WordTransformer {
 
     private static List<String> transform(Set<String> visited, String startWord, String stopWord, Set<String> dictionary) {
