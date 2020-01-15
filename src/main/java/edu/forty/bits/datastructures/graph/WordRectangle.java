@@ -13,6 +13,7 @@ import java.util.Map;
  * The words need not be chosen consecutively from the list, but all rows must be the same length and
  * all columns must be the same height.
  */
+@edu.forty.bits.datastructures.annotations.Trie
 public class WordRectangle {
     // Such questions require building up or pre-processing data.
     // To look at building the largest possible rectangle, start from largest to smallest and break immediately
