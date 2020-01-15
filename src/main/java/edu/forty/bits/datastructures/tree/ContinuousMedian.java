@@ -8,7 +8,7 @@ import java.util.PriorityQueue;
  * Numbers are randomly generated and passed to a method. Write a program to find and maintain the median value as
  * new values are generated.
  */
-public class ContinuousMean {
+public class ContinuousMedian {
 
     // Create a binary search tree such that root is always the median
     // Details in terms of odd number of elements and even number of elements would help in deciding the approach
