@@ -36,7 +36,7 @@ public class MissingNumber {
 
         if (zeroBits.size() <= oneBits.size()) {
             int v = findMissing(zeroBits, column + 1);
-            return (v << 1) | 0;
+            return (v << 1);
         } else {
             int v = findMissing(oneBits, column + 1);
             return (v << 1) | 1;
