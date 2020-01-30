@@ -52,7 +52,7 @@ public class MultiSearch {
     }
 
     public static Trie createTrieFromString(String s) {
-        Trie trie = new Trie();
+        Trie trie = new Trie(List.of());
         for (int i = 0; i < s.length(); i++) {
             String suffix = s.substring(i);
             trie.insertString(suffix, i);
@@ -82,7 +82,7 @@ public class MultiSearch {
     // searching for words in trie while traversing each character in the bigger string and storing their indexes
     // while found in the trie would take complexity of O(B*K) time
     public static Trie createTreeFromStrings(String[] smalls, int maxSize) {
-        Trie tree = new Trie();
+        Trie tree = new Trie(List.of());
         for (String s : smalls) {
             if (s.length() <= maxSize) {
                 tree.insertString(s, 0);
