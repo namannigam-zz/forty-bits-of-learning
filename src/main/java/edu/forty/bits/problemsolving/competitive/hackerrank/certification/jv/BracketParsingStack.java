@@ -1,4 +1,4 @@
-package edu.forty.bits.problemsolving.competitive.hackerrank.certification;
+package edu.forty.bits.problemsolving.competitive.hackerrank.certification.jv;
 
 import java.util.LinkedList;
 import java.util.Scanner;
