@@ -1,4 +1,4 @@
-package edu.forty.bits.problemsolving.competitive.hackerrank.hackinterview;
+package edu.forty.bits.problemsolving.competitive.hackerrank.hackinterview.v;
 
 import java.util.*;
 import java.util.stream.Collectors;
