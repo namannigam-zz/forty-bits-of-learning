@@ -1,2 +1,0 @@
-# FortyBits 
-repository of learning
