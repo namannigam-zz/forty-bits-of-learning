@@ -36,6 +36,8 @@
                     <compilerArgs>-Xlint:all</compilerArgs>
                     <showDeprecation>true</showDeprecation>
                     <showWarnings>true</showWarnings>
+                    <source>14</source>
+                    <target>14</target>
                     <!--for lombok annotations to resolve-->
 <!--                                        <annotationProcessorPaths>-->
 <!--                                            <path>-->
