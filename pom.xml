@@ -29,15 +29,15 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.8.1</version>
                 <configuration>
-                    <release>14</release>
+                    <release>15</release>
                     <!--for unmappable characters in classes-->
                     <encoding>UTF-8</encoding>
                     <compilerArgs>--enable-preview</compilerArgs>
                     <compilerArgs>-Xlint:all</compilerArgs>
                     <showDeprecation>true</showDeprecation>
                     <showWarnings>true</showWarnings>
-                    <source>14</source>
-                    <target>14</target>
+                    <source>15</source>
+                    <target>15</target>
                     <!--for lombok annotations to resolve-->
 <!--                                        <annotationProcessorPaths>-->
 <!--                                            <path>-->
